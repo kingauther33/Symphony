@@ -41,7 +41,12 @@ Route::post('check', [Front\UserAuthController::class, 'check'])->name('admin.ch
 //Son
 
 Route::get('/student_result', [Front\StudentController::class, 'result']);
+
 Route::get('/student_profile', [Front\StudentController::class, 'profile']);
+
+Route::post('/contact', [Front\HomeController::class, 'sendmail']);
+
+Route::get('/counselor',[Front\HomeController::class,'counselor']);
 
 
 // HIEU

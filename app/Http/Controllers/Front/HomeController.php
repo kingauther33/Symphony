@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Teacher;
 use App\Models\Visitor;
 use Illuminate\Http\Request;
+use Mail;
 
 class HomeController extends Controller
 {
@@ -61,6 +62,11 @@ class HomeController extends Controller
         return view('front.admin.add.addcourse');
     }
 
+    public function counselor()
+    {
+        return view('front.counselor.counselor');
+    }
+
     public function addProfessor()
     {
         return view('front.admin.add.addprofessor');
@@ -77,5 +83,18 @@ class HomeController extends Controller
         $subcribe->save();
 
         return redirect()->back();
+    }
+    //email
+    public function sendmail(Request $request){
+        Mail::send('front.email.email',[
+            'fname' => $request->fname,
+
+        ],function ($mail) use ($request){
+            $mail->to('riven1707@gmail.com',$request->fname);
+            $mail->from($request->email);
+            $mail->subject('OnlineEdu');
+
+        });
+        return "success";
     }
 }
