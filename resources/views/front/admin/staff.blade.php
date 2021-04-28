@@ -11,9 +11,9 @@
         Đinh Tiến An
     </a>
     <ul class="dropdown-menu">
-        <li href="#">HTML</li>
-        <li href="#">JS</li>
-        <li href="#">CSS</li>
+        <li><a href="#">HTML</a></li>
+        <li><a href="#">JS</a></li>
+        <li><a href="#">CSS</a></li>
     </ul>
 
 @endsection

@@ -48,8 +48,8 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li><a href="#">HTML</a></li>
+                            <li><a href="#">JS</a></li>
                             <li><a href="#">CSS</a></li>
-                            <li><a href="#">JavaScript</a></li>
                         </ul>
 
                     </li>
