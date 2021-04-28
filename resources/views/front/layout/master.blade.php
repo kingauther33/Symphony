@@ -59,15 +59,13 @@
                             <div class="header-info-left">
                                 <ul>
                                     <li><a href="https://preview.colorlib.com/cdn-cgi/l/email-protection"
-                                           class="__cf_email__" data-cfemail="b7d9d2d2d3dfd2dbc7f7d0dad6dedb99d4d8da">[email&#160;protected]</a>
+                                           class="__cf_email__" data-cfemail="b7d9d2d2d3dfd2dbc7f7d0dad6dedb99d4d8da">.</a>
                                     </li>
-                                    <li>666 7475 25252</li>
                                 </ul>
                             </div>
                             <div class="header-info-right">
                                 <ul>
-                                    <li><a href="#"><i class="ti-user"></i>Login</a></li>
-                                    <li><a href="#"><i class="ti-lock"></i>Register</a></li>
+                                    <li><a href="login"><i class="ti-user"></i>Login</a></li>
                                 </ul>
                             </div>
                         </div>

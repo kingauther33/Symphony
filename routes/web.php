@@ -40,7 +40,7 @@ Route::post('/student_profile', [Front\StudentController::class, 'postProfile'])
 Route::post('/contact', [Front\HomeController::class, 'sendmail'])->name('contact_mail');
 Route::get('/counselor', [Front\HomeController::class, 'counselor'])->name('counselor.home')->middleware('isLogged');
 
-Route::post('/contact', [Front\HomeController::class, 'sendmail']);
+
 
 
 //Route::post('/contact', [Front\HomeController::class, 'subscribe'])->name('contact_subscribe');
