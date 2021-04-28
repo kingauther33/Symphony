@@ -10,7 +10,7 @@ use App\Models\Teacher;
 use App\Models\Visitor;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
-use Mail;
+use Illuminate\Support\Facades\Mail;
 
 class HomeController extends Controller
 {
@@ -36,35 +36,6 @@ class HomeController extends Controller
 //        return view('front.auth.login');
 //    }
 
-    public function admin()
-    {
-        return view('front.admin.admin');
-    }
-
-    public function staff()
-    {
-        return view('front.admin.staff');
-    }
-
-    public function student()
-    {
-        return view('front.admin.student');
-    }
-
-    public function class()
-    {
-        return view('front.admin.class');
-    }
-
-    public function addStudent()
-    {
-        return view('front.admin.add.addstudent');
-    }
-
-    public function addCourse()
-    {
-        return view('front.admin.add.addcourse');
-    }
     public function teacher(){
         $teacher = Student::all();
         return view('front.teacher.teacher',compact('teacher'));
@@ -92,53 +63,42 @@ class HomeController extends Controller
 
     }
 
-    public function counselor()
-    {
-        $counselors = Visitor::all();
-        return view('front.counselor.counselor',compact('counselors'));
-    }
-
-    public function addProfessor()
-    {
-        return view('front.admin.add.addprofessor');
-    }
-
     public function subscribe(Request $request) {
+
+        $request->validate([
+            'first name'=>'required',
+            'last name'=>'required',
+            'email'=>'required|email',
+            'phone number'=>'required|regex:/(0)[0-9]{9}/',
+            'address'=>'required'
+        ]);
+
         $subcribe = new Visitor();
-        $subcribe->fname = $request->fname;
-        $subcribe->lname = $request->lname;
+        $subcribe->fname = $request->input('first name');
+        $subcribe->lname = $request->input('last name');
         $subcribe->email = $request->email;
-        $subcribe->phone = $request->phone;
+        $subcribe->phone = $request->input('phone number');
         $subcribe->address = $request->address;
 
         $subcribe->save();
 
+
         return redirect()->back();
     }
+
     //email
+
     public function sendmail(Request $request){
         Mail::send('front.email.email',[
-            'fname' => $request->fname,
+            'first name' => $request->input('first name'),
 
         ],function ($mail) use ($request){
-            $mail->to('riven1707@gmail.com',$request->fname);
+            $mail->to('riven1707@gmail.com',$request->input('first name'));
             $mail->from($request->email);
             $mail->subject('OnlineEdu');
 
         });
         return "success";
     }
-    public function postCounselor(Request  $request){
 
-        $counselors = new Counselor();
-        $counselors->fname = $request->fname;
-        $counselors->lname = $request->lname;
-        $counselors->email = $request->email;
-        $counselors->password = $request->password;
-        $counselors->dob = $request->dob;
-        $counselors->phone = $request->phone;
-
-        $counselors->save();
-
-    }
 }

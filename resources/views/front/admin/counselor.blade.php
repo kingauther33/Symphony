@@ -2,6 +2,20 @@
 
 @section('title', 'Counselor')
 
+@section('account')
+
+    <a style="padding-left: 50.5rem;" class="nav-link dropdown-toggle"   id="navbarDropdownMenuLink-55" data-toggle="dropdown"
+       aria-haspopup="true" aria-expanded="false">
+        <img src="https://mdbootstrap.com/img/Photos/Avatars/img (31).jpg" width="40px" height="40px"  class="rounded-circle z-depth-0"
+             alt="avatar image">
+        Đinh Tiến An
+    </a>
+    <div class="dropdown-menu dropdown-menu-lg-right" aria-labelledby="navbarDropdownMenuLink-55">
+        <a class="dropdown-item" href="student_result">Profile</a>
+    </div>
+
+@endsection
+
 @section('body')
 
   <div class="content">

@@ -46,7 +46,7 @@ Route::get('/student_profile', [Front\StudentController::class, 'profile']);
 
 Route::post('/student_profile', [Front\StudentController::class, 'postProfile']);
 
-Route::post('/contact', [Front\HomeController::class, 'sendmail']);
+Route::post('/contact', [Front\HomeController::class, 'subscribe']);
 
 Route::get('/counselor',[Front\HomeController::class,'counselor']);
 
@@ -107,6 +107,5 @@ Route::post('/courses', [Front\CourseController::class, 'new_course']);
 
 Route::get('/courses', [Front\CourseController::class, 'course']);
 
-Route::get('/students', [Front\AdminController::class, 'sssss']);
-
 Route::get('delete{rowId}',[Front\AdminController::class,'delete']);
+
