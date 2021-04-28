@@ -33,13 +33,14 @@ class UserAuthController extends Controller
 
                 switch ($user->role_id) {
                     case 1:
-                        return redirect()->route('admin.staff'); // Counselor
+                        dd(session('LoggedUser'));
+                        return redirect()->route('counselor.home'); // Counselor
                     case 2:
-                        return redirect('admin.staff'); // Training Department / ADMIN
+                        return redirect()->route('admin.staff'); // Training Department / ADMIN
                     case 3:
-                        return redirect('counselor'); // Teacher
+                        return redirect()->route('teacher.home'); // Teacher
                     case 4:
-                        return redirect(''); // Student
+                        return redirect()->route('student.profile'); // Student
                 }
                 return redirect()->route('admin.staff');
 
@@ -48,6 +49,14 @@ class UserAuthController extends Controller
             }
         } else {
             return back()->with('fail', 'No account found for this email');
+        }
+    }
+
+    public function logout() {
+        if(session()->has('LoggedUser')) {
+            session()->pull('LoggedUser');
+            session()->pull('LoggedRole');
+            return redirect('login');
         }
     }
 }
