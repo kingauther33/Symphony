@@ -377,7 +377,7 @@ class DatabaseSeeder extends Seeder
                 'user_id' => 10
             ],
             [
-                'avatar' => null,
+                'avatar' => 'avatar-2.png',
 //                'email' => 'thieutoan123@fpt.edu.vn',
 //                'password' => $faker->password,
                 'fname' => 'Thieu',
@@ -479,7 +479,7 @@ class DatabaseSeeder extends Seeder
                 'user_id' => 17
             ],
             [
-                'avatar' => null,
+                'avatar' => 'avatar-2.png',
                 'grade_id' => 1,
 //                'email' => $faker->email(),
 //                'password' => $faker->password(),
@@ -511,7 +511,7 @@ class DatabaseSeeder extends Seeder
                 'user_id' => 19
             ],
             [
-                'avatar' => null,
+                'avatar' => 'avatar-1.png',
                 'grade_id' => 3,
 //                'email' => $faker->email(),
 //                'password' => $faker->password(),
@@ -527,7 +527,7 @@ class DatabaseSeeder extends Seeder
                 'user_id' => 20
             ],
             [
-                'avatar' => null,
+                'avatar' => 'avatar-0.png',
                 'grade_id' => 3,
 //                'email' => $faker->email(),
 //                'password' => $faker->password(),
