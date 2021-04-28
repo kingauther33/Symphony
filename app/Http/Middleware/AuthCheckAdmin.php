@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 
-class AuthCheckCounselor
+class AuthCheckAdmin
 {
     /**
      * Handle an incoming request.
@@ -18,8 +18,8 @@ class AuthCheckCounselor
     {
         if(!session()->has('LoggedUser')) {
             return redirect('login')->with('fail', 'You must log in');
-        } else if(session('LoggedRole') != 1) {
-            return abort(404, 'You have no authorised');
+        } else if(session('LoggedRole') != 2) {
+            return redirect('error');
         }
 
         return $next($request);
