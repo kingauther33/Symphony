@@ -22,6 +22,7 @@ class CreateCounselorsTable extends Migration
             $table->string('lname');
             $table->date('dob');
             $table->string('phone');
+            $table->integer('isDeleted')->default(0);
 
             $table->timestamps();
             $table->softDeletes();

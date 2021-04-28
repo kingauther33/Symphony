@@ -25,6 +25,7 @@ class CreateTrainingDepartmentsTable extends Migration
             $table->string('phone');
             $table->date('last_login_date')->nullable();
             $table->string('last_login_ip')->nullable();
+            $table->integer('isDeleted')->default(0);
 
             $table->timestamps();
             $table->softDeletes();

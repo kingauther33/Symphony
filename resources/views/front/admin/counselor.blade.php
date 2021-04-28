@@ -10,9 +10,11 @@
              alt="avatar image">
         Đinh Tiến An
     </a>
-    <div class="dropdown-menu dropdown-menu-lg-right" aria-labelledby="navbarDropdownMenuLink-55">
-        <a class="dropdown-item" href="student_result">Profile</a>
-    </div>
+    <ul class="dropdown-menu">
+        <li href="#">HTML</li>
+        <li href="#">JS</li>
+        <li href="#">CSS</li>
+    </ul>
 
 @endsection
 
@@ -57,8 +59,7 @@
               <td>{{ $counselor->phone }}</td>
               <td>{{ $counselor->dob }}</td>
                 <td>
-                    <span class="btn btn-sm btn-danger btn_row_edit" style="background: #17a2b8; border-color: #17a2b8"><i class="fa fa-edit"></i></span>
-                    <span class="btn btn-sm btn-danger btn_row_delete"><i class="fa fa-trash"></i></span>
+                    <span class="btn btn-sm btn-danger btn_row_delete"><i onclick="window.location='./admin_staff/delete/{{ $counselor->id }}'" class="fa fa-trash"></i></span>
                 </td>
             </tr>
             <tr class="spacer"><td colspan="100"></td></tr>
