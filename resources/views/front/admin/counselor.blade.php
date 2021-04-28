@@ -112,7 +112,7 @@
                         <tr scope="row">
                             <td><a>{{ $counselor->fname }} {{$counselor->lname}}</a></td>
                             <td>
-                                {{ $counselor->email }}
+                                {{ $UsersInDatabase->where('id',$counselor->user_id)->first()->email }}
                             </td>
                             <td>{{ $counselor->phone }}</td>
                             <td>{{ $counselor->dob }}</td>

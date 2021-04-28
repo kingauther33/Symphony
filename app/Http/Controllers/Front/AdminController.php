@@ -8,6 +8,7 @@ use App\Models\Grade;
 use App\Models\Student;
 use App\Models\Teacher;
 use App\Models\Training_department;
+use App\Models\User;
 use App\Models\Visitor;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
@@ -60,6 +61,8 @@ class AdminController extends Controller
         // Session when logged in
         if (session()->has('LoggedUser')) {
             $user = Training_department::where('user_id', '=', session('LoggedUser'))->first();
+            $users = DB::table('users')->where('role_id', 1)->get();
+
             $data = [
                 'LoggedUserInfo' => $user
             ];
@@ -206,8 +209,8 @@ class AdminController extends Controller
         // Session when logged in
         if (session()->has('LoggedUser')) {
             $user = Training_department::where('user_id', '=', session('LoggedUser'))->first();
-            $users = Training_department::where('role_id', session('LoggedRole'));
-            $emails = 
+            $users = User::where('role_id', 1)->get();
+            $users = DB::table('users')->where('role_id', 1)->get();
 
             $data = [
                 'LoggedUserInfo' => $user,
