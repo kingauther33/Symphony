@@ -485,29 +485,33 @@
                                 </div>--}}
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        <input class="form-control valid" name="fname" type="text"
+                                        <input class="form-control valid" name="first name" type="text"
                                                placeholder="Enter your first name">
+                                        <span class="text-danger">@error('first name') {{ $message }} @enderror</span>
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        <input class="form-control valid" name="lname" type="text"
+                                        <input class="form-control valid" name="last name" type="text"
                                                placeholder="Enter your last name">
+                                        <span class="text-danger">@error('last name') {{ $message }} @enderror</span>
                                     </div>
                                 </div>
 
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        <input class="form-control valid" name="age" min="18" max="60" id="age"
+                                        <input class="form-control valid" name="age"
                                                type="number"
                                                placeholder="Enter your age">
+                                        <span class="text-danger">@error('age') {{ $message }} @enderror</span>
                                     </div>
                                 </div>
 
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        <input class="form-control valid" type="tel" id="phone" name="phone"
-                                               placeholder="123-45-678" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}">
+                                        <input class="form-control valid" type="tel" id="phone" name="phone number"
+                                               placeholder="Phone Number">
+                                        <span class="text-danger">@error('phone number') {{ $message }} @enderror</span>
                                     </div>
                                 </div>
 
@@ -515,6 +519,7 @@
                                     <div class="form-group">
                                         <input class="form-control" name="email" type="email"
                                                placeholder="Enter your email">
+                                        <span class="text-danger">@error('email') {{ $message }} @enderror</span>
                                     </div>
                                 </div>
 
@@ -522,6 +527,7 @@
                                     <div class="form-group">
                                         <input class="form-control" name="address" type="text"
                                                placeholder="Enter address">
+                                        <span class="text-danger">@error('address') {{ $message }} @enderror</span>
                                     </div>
                                 </div>
                             </div>

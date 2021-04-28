@@ -9,7 +9,7 @@ use App\Models\Teacher;
 use App\Models\Visitor;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
-use Mail;
+use Illuminate\Support\Facades\Mail;
 
 class HomeController extends Controller
 {
@@ -56,24 +56,36 @@ class HomeController extends Controller
     }
 
     public function subscribe(Request $request) {
+
+        $request->validate([
+            'first name'=>'required',
+            'last name'=>'required',
+            'email'=>'required|email',
+            'phone number'=>'required|regex:/(0)[0-9]{9}/',
+            'address'=>'required'
+        ]);
+
         $subcribe = new Visitor();
-        $subcribe->fname = $request->fname;
-        $subcribe->lname = $request->lname;
+        $subcribe->fname = $request->input('first name');
+        $subcribe->lname = $request->input('last name');
         $subcribe->email = $request->email;
-        $subcribe->phone = $request->phone;
+        $subcribe->phone = $request->input('phone number');
         $subcribe->address = $request->address;
 
         $subcribe->save();
 
+
         return redirect()->back();
     }
+
     //email
+
     public function sendmail(Request $request){
         Mail::send('front.email.email',[
-            'fname' => $request->fname,
+            'first name' => $request->input('first name'),
 
         ],function ($mail) use ($request){
-            $mail->to('riven1707@gmail.com',$request->fname);
+            $mail->to('riven1707@gmail.com',$request->input('first name'));
             $mail->from($request->email);
             $mail->subject('OnlineEdu');
 

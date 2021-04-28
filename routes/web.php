@@ -46,7 +46,7 @@ Route::get('/student_profile', [Front\StudentController::class, 'profile']);
 
 Route::post('/student_profile', [Front\StudentController::class, 'postProfile']);
 
-Route::post('/contact', [Front\HomeController::class, 'sendmail']);
+Route::post('/contact', [Front\HomeController::class, 'subscribe']);
 
 Route::get('/counselor',[Front\HomeController::class,'counselor']);
 

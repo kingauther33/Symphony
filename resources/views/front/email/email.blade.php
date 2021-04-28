@@ -1,4 +1,4 @@
-<h3>Hi {{$fname}}</h3>
+<h3>Hi </h3>
 
 <p>Thank you for visiting our website, we hope you have a wonderful time
  we hope that you will get back to us with a answer ASAP. </p>
