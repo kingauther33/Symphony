@@ -19,4 +19,8 @@ class Visitor extends Model
     public function course() {
         return $this->belongsTo(Course::class, 'course_id', 'id');
     }
+
+    public function exam() {
+        return $this->belongsTo(Exam::class, 'exam_id', 'id');
+    }
 }

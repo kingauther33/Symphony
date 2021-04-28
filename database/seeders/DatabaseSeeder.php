@@ -393,46 +393,39 @@ class DatabaseSeeder extends Seeder
 
         DB::table('exams')->insert([
             [
-                'exam_type_id' => 1,
-                'training_department_id' => 1,
-                'subject_id' => 1,
-                'start_date' => '2021-01-15',
+                'counselor_id' => 1,
+                'name' => 'Bai kiem tra dau vao nam 2018',
+                'start_date' => '2018-01-15',
             ],
             [
-                'exam_type_id' => 1,
-                'training_department_id' => 1,
-                'subject_id' => 2,
-                'start_date' => '2021-01-30',
+                'counselor_id' => 2,
+                'name' => 'Bai kiem tra dau vao nam 2018',
+                'start_date' => '2018-06-25',
             ],
             [
-                'exam_type_id' => 2,
-                'training_department_id' => 1,
-                'subject_id' => 1,
-                'start_date' => '2021-02-08',
+                'counselor_id' => 1,
+                'name' => 'Bai kiem tra dau vao nam 2019',
+                'start_date' => '2019-02-22',
             ],
             [
-                'exam_type_id' => 1,
-                'training_department_id' => 2,
-                'subject_id' => 3,
+                'counselor_id' => 3,
+                'name' => 'Bai kiem tra dau vao nam 2020',
                 'start_date' => '2020-12-24',
             ],
             [
-                'exam_type_id' => 2,
-                'training_department_id' => 1,
-                'subject_id' => 2,
-                'start_date' => '2021-03-21',
+                'counselor_id' => 2,
+                'name' => 'Bai kiem tra dau vao nam 2020',
+                'start_date' => '2020-07-21',
             ],
             [
-                'exam_type_id' => 2,
-                'training_department_id' => 1,
-                'subject_id' => 1,
+                'counselor_id' => 1,
+                'name' => 'Bai kiem tra dau vao nam 2021',
                 'start_date' => '2021-02-11',
             ],
             [
-                'exam_type_id' => 1,
-                'training_department_id' => 2,
-                'subject_id' => 3,
-                'start_date' => '2021-04-01',
+                'counselor_id' => 2,
+                'name' => 'Bai kiem tra dau vao nam 2020',
+                'start_date' => '2020-12-12'
             ]
         ]);
 
@@ -625,7 +618,8 @@ class DatabaseSeeder extends Seeder
                 'address' => $faker->address,
                 'status' => 2,
                 'entrance_mark' => rand(0, 10),
-                'course_id' => 1
+                'course_id' => 1,
+                'exam_id' => 1
             ],
             [
                 'fname' => $faker->firstName(),
@@ -636,7 +630,8 @@ class DatabaseSeeder extends Seeder
                 'address' => $faker->address,
                 'status' => 2,
                 'entrance_mark' => rand(0, 10),
-                'course_id' => 1
+                'course_id' => 1,
+                'exam_id' => 1
             ],
             [
                 'fname' => $faker->firstName(),
@@ -647,7 +642,8 @@ class DatabaseSeeder extends Seeder
                 'address' => $faker->address,
                 'status' => 1,
                 'entrance_mark' => 0,
-                'course_id' => 2
+                'course_id' => 2,
+                'exam_id' => 2
             ],
             [
                 'fname' => $faker->firstName(),
@@ -658,7 +654,8 @@ class DatabaseSeeder extends Seeder
                 'address' => $faker->address,
                 'status' => 3,
                 'entrance_mark' => rand(0, 10),
-                'course_id' => 3
+                'course_id' => 3,
+                'exam_id' => 2
             ],
             [
                 'fname' => $faker->firstName(),
@@ -669,7 +666,8 @@ class DatabaseSeeder extends Seeder
                 'address' => $faker->address,
                 'status' => 3,
                 'entrance_mark' => rand(0, 10),
-                'course_id' => 2
+                'course_id' => 2,
+                'exam_id' => 2
             ],
             [
                 'fname' => $faker->firstName(),
@@ -680,7 +678,8 @@ class DatabaseSeeder extends Seeder
                 'address' => $faker->address,
                 'status' => 2,
                 'entrance_mark' => rand(0, 10),
-                'course_id' => 2
+                'course_id' => 2,
+                'exam_id' => 3
             ],
         ]);
 

@@ -16,6 +16,9 @@ class CreateVisitorsTable extends Migration
         Schema::create('visitors', function (Blueprint $table) {
             $table->id()->nullable();
 
+            $table->integer('exam_id')->unsigned();
+            $table->integer('course_id')->unsigned();
+
             $table->string('fname');
             $table->string('lname');
             $table->string('email');
@@ -24,7 +27,6 @@ class CreateVisitorsTable extends Migration
             $table->string('address', 255)->nullable();
             $table->tinyInteger('status')->nullable();
             $table->integer('entrance_mark')->nullable();
-            $table->integer('course_id');
             $table->integer('isDeleted')->default(0);
 
             $table->timestamps();

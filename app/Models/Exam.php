@@ -16,19 +16,27 @@ class Exam extends Model
     protected $guarded = [];
     protected $dates = ['deleted_at'];
 
-    public function training_department() {
-        return $this->belongsTo(Training_department::class, 'training_department_id', 'id');
+//    public function training_department() {
+//        return $this->belongsTo(Training_department::class, 'training_department_id', 'id');
+//    }
+//
+//    public function exam_type() {
+//        return $this->belongsTo(Exam_type::class, 'exam_type_id', 'id');
+//    }
+//
+//    public function exam_results() {
+//        return $this->hasMany(Exam_result::class, 'exam_id', 'id');
+//    }
+//
+//    public function subject() {
+//        return $this->belongsTo(Subject::class, 'subject_id', 'id');
+//    }
+
+    public function visitors() {
+        return $this->hasMany(Visitor::class, 'exam_id', 'id');
     }
 
-    public function exam_type() {
-        return $this->belongsTo(Exam_type::class, 'exam_type_id', 'id');
-    }
-
-    public function exam_results() {
-        return $this->hasMany(Exam_result::class, 'exam_id', 'id');
-    }
-
-    public function subject() {
-        return $this->belongsTo(Subject::class, 'subject_id', 'id');
+    public function counselor() {
+        return $this->belongsTo(Counselor::class, 'counselor_id', 'id');
     }
 }

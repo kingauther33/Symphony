@@ -20,4 +20,8 @@ class Counselor extends Model
     public function user() {
         return $this->belongsTo(User::class, 'user_id', 'id');
     }
+
+    public function exams() {
+        return $this->hasMany(Exam::class, 'counselor_id', 'id');
+    }
 }
