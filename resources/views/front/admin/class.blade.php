@@ -57,7 +57,6 @@
                         <td>{{ $grade->teacher_id }}</td>
                         <td>{{ $grade->course_id }}</td>
                         <td>
-                            <span class="btn btn-sm btn-danger btn_row_edit" style="background: #17a2b8; border-color: #17a2b8"><i class="fa fa-edit"></i></span>
                             <span class="btn btn-sm btn-danger btn_row_delete"><i class="fa fa-trash"></i></span>
                         </td>
                     </tr>

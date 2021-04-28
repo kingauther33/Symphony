@@ -59,7 +59,7 @@
                         <td>{{ $professor->address }}</td>
                         <td>
 {{--                            <span class="btn btn-sm btn-danger btn_row_edit" style="background: #17a2b8; border-color: #17a2b8"><i class="fa fa-edit"></i></span>--}}
-                            <span class="btn btn-sm btn-danger btn_row_delete"><i onclick="window.location='/staff/delete/ {{ $professor->rowId }}'" class="fa fa-trash"></i></span>
+                            <span class="btn btn-sm btn-danger btn_row_delete"><i  onclick="window.location='./admin_staff/delete/{{ $professor->id }}'" class="fa fa-trash"></i></span>
                         </td>
                     </tr>
                     <tr class="spacer"><td colspan="100"></td></tr>

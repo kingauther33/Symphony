@@ -4,14 +4,17 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Exam extends Model
 {
     use HasFactory;
+    use SoftDeletes;
 
     protected $table = 'exams';
     protected $primaryKey = 'id';
     protected $guarded = [];
+    protected $dates = ['deleted_at'];
 
     public function training_department() {
         return $this->belongsTo(Training_department::class, 'training_department_id', 'id');

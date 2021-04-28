@@ -109,4 +109,9 @@ Route::get('/courses', [Front\CourseController::class, 'course']);
 
 Route::get('/students', [Front\AdminController::class, 'sssss']);
 
-Route::get('delete{rowId}',[Front\AdminController::class,'delete']);
+Route::get('admin_staff/delete/{rowId}',[Front\AdminController::class,'delete']);
+
+Route::get('admin_staff/delete/{rowId}',[Front\AdminController::class,'delete1']);
+
+Route::get('admin_staff/delete/{rowId}',[Front\AdminController::class,'delete2']);
+
