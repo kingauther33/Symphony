@@ -11,6 +11,7 @@ use App\Models\Visitor;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use PhpParser\Builder\Class_;
 
 class AdminController extends Controller
 {
@@ -236,5 +237,19 @@ class AdminController extends Controller
 
         return back();
     }
+    public function delete3($rowId){
 
+
+        Grade::where('id', $rowId)->delete();
+
+        return back();
+    }
+
+    public function delete4($rowId){
+
+
+        Visitor::where('id', $rowId)->delete();
+
+        return back();
+    }
 }

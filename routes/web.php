@@ -90,10 +90,15 @@ Route::get('/students', [Front\AdminController::class, 'sssss']);
 
 Route::get('admin_staff/delete/{rowId}',[Front\AdminController::class,'delete']);
 
-Route::get('admin_staff/delete/{rowId}',[Front\AdminController::class,'delete1']);
+Route::get('admin_counselor/delete/{rowId}',[Front\AdminController::class,'delete1']);
 
-Route::get('admin_staff/delete/{rowId}',[Front\AdminController::class,'delete2']);
+Route::get('admin_student/delete/{rowId}',[Front\AdminController::class,'delete2']);
 
-Route::get('delete{rowId}',[Front\AdminController::class,'delete']);
+Route::get('admin_class/delete/{rowId}',[Front\AdminController::class,'delete3']);
+
+Route::get('visitor/delete/{rowId}',[Front\AdminController::class,'delete4']);
+
+
+
 
 
