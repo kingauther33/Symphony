@@ -202,11 +202,16 @@ class AdminController extends Controller
     public function adminCounselor() {
         $counselors = Counselor::all();
 
+
         // Session when logged in
         if (session()->has('LoggedUser')) {
             $user = Training_department::where('user_id', '=', session('LoggedUser'))->first();
+            $users = Training_department::where('role_id', session('LoggedRole'));
+            $emails = 
+
             $data = [
-                'LoggedUserInfo' => $user
+                'LoggedUserInfo' => $user,
+                'UsersInDatabase' => $users
             ];
         }
 

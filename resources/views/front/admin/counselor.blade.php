@@ -77,7 +77,7 @@
 
 @section('body')
 
-    <div class="content">
+    <div class="content pt-0">
 
         <div class="container">
             <h2 class="mb-3 mt-4">Counselor</h2>
