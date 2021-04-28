@@ -35,35 +35,6 @@ class HomeController extends Controller
 //        return view('front.auth.login');
 //    }
 
-    public function admin()
-    {
-        return view('front.admin.admin');
-    }
-
-    public function staff()
-    {
-        return view('front.admin.staff');
-    }
-
-    public function student()
-    {
-        return view('front.admin.student');
-    }
-
-    public function class()
-    {
-        return view('front.admin.class');
-    }
-
-    public function addStudent()
-    {
-        return view('front.admin.add.addstudent');
-    }
-
-    public function addCourse()
-    {
-        return view('front.admin.add.addcourse');
-    }
     public function teacher(){
         $teacher = Student::all();
         return view('front.teacher.teacher',compact('teacher'));
@@ -82,17 +53,6 @@ class HomeController extends Controller
 
         $teacher->save();
 
-    }
-
-    public function counselor()
-    {
-        $counselors = Visitor::all();
-        return view('front.counselor.counselor',compact('counselors'));
-    }
-
-    public function addProfessor()
-    {
-        return view('front.admin.add.addprofessor');
     }
 
     public function subscribe(Request $request) {
@@ -120,17 +80,5 @@ class HomeController extends Controller
         });
         return "success";
     }
-    public function postCounselor(Request  $request){
 
-        $counselors = new Counselor();
-        $counselors->fname = $request->fname;
-        $counselors->lname = $request->lname;
-        $counselors->email = $request->email;
-        $counselors->password = $request->password;
-        $counselors->dob = $request->dob;
-        $counselors->phone = $request->phone;
-
-        $counselors->save();
-
-    }
 }

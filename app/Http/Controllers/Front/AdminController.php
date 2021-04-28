@@ -49,29 +49,29 @@ class AdminController extends Controller
     public function addStudent1(Request $request) {
 
         $request->validate([
-           'fname'=>'required',
-           'lname'=>'required',
+           'first name'=>'required',
+           'last name'=>'required',
            'email'=>'required|email',
-           'date_of_join'=>'date_format:Y-m-d|nullable',
-           'grade_id'=>'required|numeric',
+           'registration date'=>'date_format:Y-m-d|nullable',
+           'class id'=>'required|numeric',
            'password'=>'required|min:6|max:14',
-           'phone'=>'required|regex:/(0)[0-9]{9}/',
-           'dob'=>'date_format:Y-m-d|before:today|nullable',
+           'phone number'=>'required|regex:/(0)[0-9]{9}/',
+           'birth date'=>'date_format:Y-m-d|before:today|nullable',
            'status'=>'required|numeric',
            'address'=>'required|max:255'
         ]);
 
         $addstudent = new Student();
-        $addstudent->grade_id = $request->grade_id;
+        $addstudent->grade_id = $request->input('class id');
         $addstudent->avatar = $request->avatar;
         $addstudent->email = $request->email;
         $addstudent->password = $request->password;
-        $addstudent->fname = $request->fname;
-        $addstudent->lname = $request->lname;
-        $addstudent->dob = $request->dob;
-        $addstudent->phone = $request->phone;
+        $addstudent->fname = $request->input('first name');
+        $addstudent->lname = $request->input('last name');
+        $addstudent->dob = $request->input('birth date');
+        $addstudent->phone = $request->input('phone number');
         $addstudent->address = $request->address;
-        $addstudent->date_of_join = $request->date_of_join;
+        $addstudent->date_of_join = $request->input('registration date');
         $addstudent->status = $request->status;
 
         $addstudent->save();
@@ -88,19 +88,19 @@ class AdminController extends Controller
     public function addCourse1(Request $request) {
 
         $request->validate([
-            'name'=>'required',
-            'course_id'=>'required|numeric',
-            'description'=>'required|max:255',
-            'year'=>'required|regex:{4}',
-            'teacher_id'=>'required|numeric'
+            'course name'=>'required',
+            'course id'=>'required|numeric',
+            'course details'=>'required|max:255',
+            'starting year'=>'required|regex:{4}',
+            'professor id'=>'required|numeric'
         ]);
 
         $addcourse = new Grade();
-        $addcourse->year = $request->year;
-        $addcourse->name = $request->name;
-        $addcourse->description = $request->description;
-        $addcourse->teacher_id = $request->teacher_id;
-        $addcourse->course_id = $request->course_id;
+        $addcourse->year = $request->input('starting year');
+        $addcourse->name = $request->input('course name');
+        $addcourse->description = $request->input('course details');
+        $addcourse->teacher_id = $request->input('professor id');
+        $addcourse->course_id = $request->input('course id');
 
         $addcourse->save();
 
@@ -116,13 +116,13 @@ class AdminController extends Controller
     public function addProfessor1(Request $request) {
 
         $request->validate([
-            'fname'=>'required',
-            'lname'=>'required',
+            'first name'=>'required',
+            'last name'=>'required',
             'email'=>'required|email',
             'password'=>'required|min:6|max:14',
-            'specialty'=>'required',
-            'phone'=>'required|regex:/(0)[0-9]{9}/',
-            'dob'=>'date_format:Y-m-d|before:today|nullable',
+            'department'=>'required',
+            'phone number'=>'required|regex:/(0)[0-9]{9}/',
+            'birth date'=>'date_format:Y-m-d|before:today|nullable',
             'address'=>'required|max:255',
             'comment'=>'max:255'
         ]);
@@ -131,12 +131,12 @@ class AdminController extends Controller
         $addprofessor->avatar = $request->avatar;
         $addprofessor->email = $request->email;
         $addprofessor->password = $request->password;
-        $addprofessor->fname = $request->fname;
-        $addprofessor->lname = $request->lname;
-        $addprofessor->dob = $request->dob;
+        $addprofessor->fname = $request->input('first name');
+        $addprofessor->lname = $request->input('last name');
+        $addprofessor->dob = $request->input('birth date');
         $addprofessor->address = $request->address;
-        $addprofessor->phone = $request->phone;
-        $addprofessor->specialty = $request->specialty;
+        $addprofessor->phone = $request->input('phone number');
+        $addprofessor->specialty = $request->input('department');
         $addprofessor->comment = $request->comment;
 
         $query = $addprofessor->save();
@@ -164,21 +164,21 @@ class AdminController extends Controller
     public function addCounselor1(Request $request) {
 
         $request->validate([
-            'fname'=>'required',
-            'lname'=>'required',
+            'first name'=>'required',
+            'last name'=>'required',
             'email'=>'required|email',
             'password'=>'required|min:6|max:14',
-            'dob'=>'date_format:Y-m-d|before:today|nullable',
-            'phone'=>'required|regex:/(0)[0-9]{9}/'
+            'birth date'=>'date_format:Y-m-d|before:today|nullable',
+            'phone number'=>'required|regex:/(0)[0-9]{9}/'
         ]);
 
         $counselors = new Counselor();
-        $counselors->fname = $request->fname;
-        $counselors->lname = $request->lname;
+        $counselors->fname = $request->input('first name');
+        $counselors->lname = $request->input('last name');
         $counselors->email = $request->email;
         $counselors->password = $request->password;
-        $counselors->dob = $request->dob;
-        $counselors->phone = $request->phone;
+        $counselors->dob = $request->input('birth date');
+        $counselors->phone = $request->input('phone number');
 
         $counselors->save();
 

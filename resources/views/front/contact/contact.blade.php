@@ -486,13 +486,13 @@
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <input class="form-control valid" name="fname" type="text"
-                                               placeholder="Enter your first name" required>
+                                               placeholder="Enter your first name">
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <input class="form-control valid" name="lname" type="text"
-                                               placeholder="Enter your last name" required>
+                                               placeholder="Enter your last name">
                                     </div>
                                 </div>
 
@@ -500,28 +500,28 @@
                                     <div class="form-group">
                                         <input class="form-control valid" name="age" min="18" max="60" id="age"
                                                type="number"
-                                               placeholder="Enter your age" required>
+                                               placeholder="Enter your age">
                                     </div>
                                 </div>
 
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <input class="form-control valid" type="tel" id="phone" name="phone"
-                                               placeholder="123-45-678" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" required>
+                                               placeholder="123-45-678" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}">
                                     </div>
                                 </div>
 
                                 <div class="col-12">
                                     <div class="form-group">
                                         <input class="form-control" name="email" type="email"
-                                               placeholder="Enter your email" required>
+                                               placeholder="Enter your email">
                                     </div>
                                 </div>
 
                                 <div class="col-12">
                                     <div class="form-group">
                                         <input class="form-control" name="address" type="text"
-                                               placeholder="Enter address" required>
+                                               placeholder="Enter address">
                                     </div>
                                 </div>
                             </div>
