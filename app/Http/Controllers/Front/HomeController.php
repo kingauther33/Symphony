@@ -54,12 +54,12 @@ class HomeController extends Controller
 
         $teacher->save();
 
-        $class = new Grade();
+        $grade = new Grade();
 
-        $class->name = $request->name;
-        $class->year = $request->year;
+        $grade->name = $request->name;
+        $grade->year = $request->year;
 
-        $class->save();
+        $grade->save();
 
     }
 

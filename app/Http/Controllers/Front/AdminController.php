@@ -243,7 +243,7 @@ class AdminController extends Controller
         return back();
     }
 
-    public function deleteClass($rowId){
+    public function deleteGrade($rowId){
         Grade::where('id', $rowId)->delete();
         DB::table('grades')->where('id', $rowId)->update(['isDeleted' => 1]);
 
