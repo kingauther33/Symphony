@@ -16,7 +16,6 @@ class StudentController extends Controller
 
     public function profile() {
         $profiles = Student::all();
-
         return view('front.profile.students',compact('profiles'));
     }
 //    public function postProfile(Request $request) {
