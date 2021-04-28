@@ -2,19 +2,23 @@
 
 @section('title', 'Add Counselor')
 
-
 @section('account')
 
     <div class="container1 css-drop">
         <div class="half">
             <label for="profile2" class="profile-dropdown">
-                <input type="checkbox" id="profile2"><img src="https://mdbootstrap.com/img/Photos/Avatars/img (31).jpg" width="40px" height="40px"  class="rounded-circle z-depth-0"
+                <input type="checkbox" id="profile2"><img src="front/OnlineEdu/img/user/{{ $LoggedUserInfo->avatar }}"
+                                                          width="40px" height="40px" class="rounded-circle z-depth-0"
                                                           alt="avatar image">
                 {{--        {{ $LoggedUserInfo->fname }}--}}
-                <span>{{ $LoggedUserInfo->lname }} {{ $LoggedUserInfo->fname }}</span>
+                <span class="font-weight-bold">{{ $LoggedUserInfo->lname }} {{ $LoggedUserInfo->fname }}</span>
                 <label for="profile2"><i class="mdi mdi-menu"></i></label>
                 <ul>
-                    <li><a href="#"><i class="mdi mdi-email-outline"></i>Profile</a></li>
+                    <li><a href="admin_profile"><i class="mdi mdi-email-outline"></i>Profile</a></li>
+                    <li><a href="admin_counselor"><i class="mdi mdi-email-outline"></i>Counselor</a></li>
+                    <li><a href="admin_staff"><i class="mdi mdi-email-outline"></i>Staff</a></li>
+                    <li><a href="admin_student"><i class="mdi mdi-email-outline"></i>Student</a></li>
+                    <li><a href="admin_grade"><i class="mdi mdi-email-outline"></i>Grades</a></li>
                     {{--                <li><a href="#"><i class="mdi mdi-account"></i>Account</a></li>--}}
                     {{--                <li><a href="#"><i class="mdi mdi-settings"></i>Settings</a></li>--}}
                     <li><a href="logout"><i class="mdi mdi-logout"></i>Logout</a></li>
@@ -26,7 +30,7 @@
 @endsection
 
 @section('body')
-    <div class="content">
+    <div class="content mt-80">
         <div class="container">
             <div class="card-box">
                 <div class="card-header">
@@ -187,7 +191,6 @@
     </div>
 
     @section('style')
-        <link rel="stylesheet" href="public/front/admin/css/1.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
 

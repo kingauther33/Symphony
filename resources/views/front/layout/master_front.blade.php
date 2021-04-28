@@ -11,6 +11,8 @@
     <link rel="manifest" href="site.html">
     <link rel="shortcut icon" type="image/x-icon" href="front/OnlineEdu/img/favicon.ico">
 
+    <link rel="stylesheet" href="front/admin/css/dropdown.css">
+
     <link rel="stylesheet" href="front/OnlineEdu/css/bootstrap.min.css">
     <link rel="stylesheet" href="front/OnlineEdu/css/owl.carousel.min.css">
     <link rel="stylesheet" href="front/OnlineEdu/css/slicknav.css">
@@ -55,20 +57,21 @@
                 </div>
                 <div class="container">
                     <div class="col-xl-12">
-                        <div class="row d-flex justify-content-between align-items-center">
-                            <div class="header-info-left">
-                                <ul>
-                                    <li><a href="https://preview.colorlib.com/cdn-cgi/l/email-protection"
-                                           class="__cf_email__" data-cfemail="b7d9d2d2d3dfd2dbc7f7d0dad6dedb99d4d8da">. </a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="header-info-right">
-                                <ul>
-                                    <li><a href="login"><i class="ti-user"></i>Login</a></li>
-                                </ul>
-                            </div>
-                        </div>
+                        @yield('user')
+{{--                        <div class="row d-flex justify-content-between align-items-center">--}}
+{{--                            <div class="header-info-left">--}}
+{{--                                <ul>--}}
+{{--                                    <li><a href="https://preview.colorlib.com/cdn-cgi/l/email-protection"--}}
+{{--                                           class="__cf_email__" data-cfemail="b7d9d2d2d3dfd2dbc7f7d0dad6dedb99d4d8da">. </a>--}}
+{{--                                    </li>--}}
+{{--                                </ul>--}}
+{{--                            </div>--}}
+{{--                            <div class="header-info-right">--}}
+{{--                                <ul>--}}
+{{--                                    <li><a href="login"><i class="ti-user"></i>Login</a></li>--}}
+{{--                                </ul>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
                     </div>
                 </div>
             </div>

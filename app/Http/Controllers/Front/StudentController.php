@@ -16,7 +16,14 @@ class StudentController extends Controller
 
     public function profile() {
         $profiles = Student::all();
-        return view('front.profile.students',compact('profiles'));
+
+        if (session()->has('LoggedUser')) {
+            $user = Student::where('user_id', '=', session('LoggedUser'))->first();
+            $data = [
+                'LoggedUserInfo' => $user
+            ];
+        }
+        return view('front.profile.students',compact('profiles'), $data);
     }
 //    public function postProfile(Request $request) {
 //        $profile = new profile();

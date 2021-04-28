@@ -18,7 +18,7 @@ class CreateTrainingDepartmentsTable extends Migration
 
             $table->integer('user_id')->unique()->unsigned();
 
-            $table->string('avatar')->nullable();
+            $table->string('avatar')->default('default-avatar.jpg');
             $table->string('fname');
             $table->string('lname');
             $table->date('dob');

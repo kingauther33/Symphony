@@ -3,6 +3,10 @@
 namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
+use App\Models\Counselor;
+use App\Models\Student;
+use App\Models\Teacher;
+use App\Models\Training_department;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -10,11 +14,13 @@ use Illuminate\Support\Facades\DB;
 class UserAuthController extends Controller
 {
     //
-    public function login() {
+    public function login()
+    {
         return view('front.auth.login');
     }
 
-    public function check(Request $request) {
+    public function check(Request $request)
+    {
         //Validate Request
         $request->validate([
             'email' => 'required|email',
@@ -51,8 +57,9 @@ class UserAuthController extends Controller
         }
     }
 
-    public function logout() {
-        if(session()->has('LoggedUser')) {
+    public function logout()
+    {
+        if (session()->has('LoggedUser')) {
             session()->pull('LoggedUser');
             session()->pull('LoggedRole');
             return redirect('login');

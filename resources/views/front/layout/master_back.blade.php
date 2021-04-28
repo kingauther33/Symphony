@@ -91,62 +91,7 @@
 </nav>
 <!-- Navbar -->
 
-
-<header>
-<div class="header-area">
-    <div class="header-bottom header-sticky">
-        <div class="container">
-            <div class="menu-wrapper">
-
-                <div class="logo logo2 d-block d-lg-none">
-                    <a href="index-2.html"><img src="front/OnlineEdu/img/logo/logo.png" alt=""></a>
-                </div>
-
-                <div class="main-menu d-none d-lg-block">
-                    <nav>
-                        <ul id="navigation">
-                            <li class="{{ (request()->segment(1) == 'counselor') ? 'active' : '' }}"><a href="admin_counselor">Counselor</a></li>
-                            <li class="{{ (request()->segment(1) == 'staff') ? 'active' : '' }}"><a href="admin_staff">Staff</a>
-                                <ul class="submenu">
-                                    <li><a href="#">All Teachers</a></li>
-                                    <li><a href="#">Add Teacher</a></li>
-                                </ul>
-                            </li>
-                            <li class="{{ (request()->segment(1) == 'student') ? 'active' : '' }}"><a href="admin_student">Student</a>
-                                <ul class="submenu">
-                                    <li><a href="#">All Students</a></li>
-                                    <li><a href="#">Admission Form</a></li>
-                                </ul>
-                            </li>
-                            <li class="{{ (request()->segment(1) == 'class') ? 'active' : '' }}"><a href="admin_grade">Classes</a>
-                                <ul class="submenu">
-                                    <li><a href="#">All Classes</a></li>
-                                    <li><a href="#">Add New Class</a></li>
-                                </ul>
-                            </li>
-                            <li class="{{ (request()->segment(1) == '') ? 'active' : '' }}"><a href=""></a>
-                                {{--<ul class="submenu">
-                                    <li><a href="blog.html">Blog</a></li>
-                                    <li><a href="blog_details.html">Blog Details</a></li>
-                                    <li><a href="elements.html">Element</a></li>
-                                </ul>--}}
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
-
-            <div class="col-12">
-                <div class="mobile_menu d-block d-lg-none"></div>
-            </div>
-        </div>
-    </div>
-</div>
-</header>
-
-
-
-
+@yield('headerAdmin')
 
 @yield('body')
 

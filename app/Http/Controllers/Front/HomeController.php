@@ -7,6 +7,7 @@ use App\Models\Counselor;
 use App\Models\Grade;
 use App\Models\Student;
 use App\Models\Teacher;
+use App\Models\Training_department;
 use App\Models\Visitor;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
@@ -16,12 +17,47 @@ class HomeController extends Controller
 {
     // Main (AN)
 
-    public function index()
+    public function index_checkUser()
     {
         $teachers = Teacher::all();
 
-        return view('front.index', compact('teachers'));
+        if (session()->has('LoggedUser')) {
+            switch (session('LoggedRole')) {
+                case 1:
+                    $user = Counselor::where('user_id', '=', session('LoggedUser'))->first();
+                    $data = [
+                        'LoggedUserInfo' => $user
+                    ];
+                    break;
+                case 2:
+                    $user = Training_department::where('user_id', '=', session('LoggedUser'))->first();
+                    $data = [
+                        'LoggedUserInfo' => $user
+                    ];
+                    break;
+                case 3:
+                    $user = Teacher::where('user_id', '=', session('LoggedUser'))->first();
+                    $data = [
+                        'LoggedUserInfo' => $user
+                    ];
+                    break;
+                case 4:
+                    $user = Student::where('user_id', '=', session('LoggedUser'))->first();
+                    $data = [
+                        'LoggedUserInfo' => $user
+                    ];
+                    break;
+            }
+        }
+        else {
+            $data = [
+                'LoggedUserInfo' => null
+            ];
+        }
+
+        return view('front.index', compact('teachers'), $data);
     }
+
 
     public function instructor() {
         $teachers = Teacher::all();
@@ -106,7 +142,7 @@ class HomeController extends Controller
     }
 
     public function error() {
-        
+
 
         return view('front.error.error');
     }

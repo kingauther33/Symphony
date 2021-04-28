@@ -23,7 +23,7 @@ use Illuminate\Support\Facades\Route;
 // AN
 
 
-Route::get('/', [Front\HomeController::class, 'index']);
+Route::get('/', [Front\HomeController::class, 'index_checkUser']);
 Route::get('/about', [Front\CourseController::class, 'about']);
 Route::get('/contact', [Front\CourseController::class, 'contact']);
 Route::get('/instructor', [Front\HomeController::class, 'instructor']);
