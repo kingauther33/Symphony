@@ -150,7 +150,6 @@
 @yield('body')
 
 
-
 <script src="front/OnlineEdu/js/vendor/modernizr-3.5.0.min.js"></script>
 
 <script src="front/OnlineEdu/js/vendor/jquery-1.12.4.min.js"></script>
