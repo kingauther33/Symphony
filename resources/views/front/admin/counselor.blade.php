@@ -59,7 +59,7 @@
               <td>{{ $counselor->phone }}</td>
               <td>{{ $counselor->dob }}</td>
                 <td>
-                    <span class="btn btn-sm btn-danger btn_row_delete"><i onclick="window.location='./admin_staff/delete/{{ $counselor->id }}'" class="fa fa-trash"></i></span>
+                    <span class="btn btn-sm btn-danger btn_row_delete"><i onclick="window.location='./admin_counselor/delete/{{ $counselor->id }}'" class="fa fa-trash"></i></span>
                 </td>
             </tr>
             <tr class="spacer"><td colspan="100"></td></tr>

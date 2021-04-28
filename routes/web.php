@@ -40,6 +40,8 @@ Route::post('/student_profile', [Front\StudentController::class, 'postProfile'])
 Route::post('/contact', [Front\HomeController::class, 'sendmail'])->name('contact_mail');
 Route::get('/counselor',[Front\HomeController::class,'counselor'])->name('counselor.home')->middleware('isLogged');
 
+Route::post('/contact', [Front\HomeController::class, 'sendmail']);
+
 
 Route::post('/contact', [Front\HomeController::class, 'subscribe'])->name('contact_subscribe');
 
@@ -89,11 +91,13 @@ Route::get('/courses', [Front\CourseController::class, 'course']);
 
 Route::get('/students', [Front\AdminController::class, 'sssss']);
 
-Route::get('admin_staff/delete/{rowId}',[Front\AdminController::class,'delete']);
+Route::get('admin_staff/delete/{rowId}',[Front\AdminController::class,'deleteStaff']);
 
-Route::get('admin_staff/delete/{rowId}',[Front\AdminController::class,'delete1']);
+Route::get('admin_counselor/delete/{rowId}',[Front\AdminController::class,'deleteCounselor']);
 
-Route::get('admin_staff/delete/{rowId}',[Front\AdminController::class,'delete2']);
+Route::get('admin_student/delete/{rowId}',[Front\AdminController::class,'deleteStudent']);
+
+Route::get('admin_class/delete/{rowId}',[Front\AdminController::class,'deleteClass']);
 
 Route::get('delete{rowId}',[Front\AdminController::class,'delete']);
 
