@@ -41,7 +41,7 @@
 <!-- Navbar -->
 <nav id="nav1" class="navbar navbar-expand-md navbar-light bg-light mb-20">
 
-    <a class="navbar-brand" href="#!">
+    <a class="navbar-brand" href="/">
         <img src="front/OnlineEdu/img/logo/logo.png"  alt="">
     </a>
 

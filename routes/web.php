@@ -24,7 +24,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', [Front\HomeController::class, 'index_checkUser']);
-Route::get('/about', [Front\CourseController::class, 'about']);
+Route::get('/about', [Front\CourseController::class, 'about_checkUser']);
 Route::get('/contact', [Front\CourseController::class, 'contact']);
 Route::get('/instructor', [Front\HomeController::class, 'instructor']);
 /*Route::post('/contact', [Front\HomeController::class, 'subscribe']);*/
@@ -35,8 +35,7 @@ Route::get('error', [Front\HomeController::class, 'error']);
 
 //Son
 
-Route::get('/student_result', [Front\StudentController::class, 'result']);
-Route::get('/student_profile', [Front\StudentController::class, 'profile'])
+Route::get('/student_profile', [Front\StudentController::class, 'studentProfile'])
     ->name('student.profile')
     ->middleware('isLoggedStudent');
 Route::post('/student_profile', [Front\StudentController::class, 'postProfile']);
@@ -94,6 +93,7 @@ Route::get('/admin_addprofessor', [Front\AdminController::class, 'addProfessor']
 Route::post('/admin_addprofessor', [Front\AdminController::class, 'addProfessor1'])->name('admin.addprofessor');
 Route::get('/admin_addcounselor', [Front\AdminController::class, 'addCounselor']);
 Route::post('/admin_addcounselor', [Front\AdminController::class, 'addCounselor1'])->name('admin.addcounselor');
+Route::get('admin_profile', [Front\AdminController::class, 'adminProfile'])->middleware('isLoggedAdmin');
 
 // Counselor
 

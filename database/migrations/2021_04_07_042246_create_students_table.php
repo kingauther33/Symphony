@@ -26,6 +26,7 @@ class CreateStudentsTable extends Migration
             $table->string('phone');
             $table->string('address', 255);
             $table->date('date_of_join');
+            $table->integer('mark');
             $table->tinyInteger('status');
             $table->date('last_login_date')->nullable();
             $table->string('last_login_ip')->nullable();

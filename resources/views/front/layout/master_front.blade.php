@@ -78,7 +78,7 @@
             <div class="header-bottom header-sticky">
 
                 <div class="logo d-none d-lg-block">
-                    <a href="index-2.html"><img src="front/OnlineEdu/img/logo/logo.png" alt=""></a>
+                    <a href="/"><img src="front/OnlineEdu/img/logo/logo.png" alt=""></a>
                 </div>
                 <div class="container">
                     <div class="menu-wrapper">

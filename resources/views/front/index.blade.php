@@ -21,7 +21,6 @@
                     <span>{{ $LoggedUserInfo->lname }} {{ $LoggedUserInfo->fname }}</span>
                     <label for="profile2"><i class="mdi mdi-menu"></i></label>
                     <ul>
-                        <li><a href="#"><i class="mdi mdi-email-outline"></i>Profile</a></li>
                         {{--                <li><a href="#"><i class="mdi mdi-account"></i>Account</a></li>--}}
                         {{--                <li><a href="#"><i class="mdi mdi-settings"></i>Settings</a></li>--}}
                         <li><a href="logout"><i class="mdi mdi-logout"></i>Logout</a></li>

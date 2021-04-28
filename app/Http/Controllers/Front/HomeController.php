@@ -62,7 +62,41 @@ class HomeController extends Controller
     public function instructor() {
         $teachers = Teacher::all();
 
-        return view('front.instructor.instructor', compact('teachers'));
+        if (session()->has('LoggedUser')) {
+            switch (session('LoggedRole')) {
+                case 1:
+                    $user = Counselor::where('user_id', '=', session('LoggedUser'))->first();
+                    $data = [
+                        'LoggedUserInfo' => $user
+                    ];
+                    break;
+                case 2:
+                    $user = Training_department::where('user_id', '=', session('LoggedUser'))->first();
+                    $data = [
+                        'LoggedUserInfo' => $user
+                    ];
+                    break;
+                case 3:
+                    $user = Teacher::where('user_id', '=', session('LoggedUser'))->first();
+                    $data = [
+                        'LoggedUserInfo' => $user
+                    ];
+                    break;
+                case 4:
+                    $user = Student::where('user_id', '=', session('LoggedUser'))->first();
+                    $data = [
+                        'LoggedUserInfo' => $user
+                    ];
+                    break;
+            }
+        }
+        else {
+            $data = [
+                'LoggedUserInfo' => null
+            ];
+        }
+
+        return view('front.instructor.instructor', compact('teachers'), $data);
     }
 
     // DUC

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Front;
 use App\Http\Controllers\Controller;
 use App\Models\Counselor;
 use App\Models\Student;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use App\Models\Exam;
@@ -12,20 +13,16 @@ use Illuminate\Support\Facades\DB;
 
 class StudentController extends Controller
 {
-    public function result() {
-        return view('front.student.student');
-    }
-
-    public function profile() {
-        $profiles = Student::all();
+    public function studentProfile() {
 
         if (session()->has('LoggedUser')) {
             $user = Student::where('user_id', '=', session('LoggedUser'))->first();
+            $email = User::where('id', session('LoggedUser'))->first()->email;
             $data = [
                 'LoggedUserInfo' => $user
             ];
         }
-        return view('front.profile.students',compact('profiles'), $data);
+        return view('front.profile.students',compact('email'), $data);
     }
 
     public function exams(){

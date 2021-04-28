@@ -459,6 +459,7 @@ class DatabaseSeeder extends Seeder
                 'address' => $faker->address,
                 'date_of_join' => $faker->dateTimeBetween('-2 years', now()),
                 'status' => 1,
+                'mark' => 8,
                 'last_login_date' => $faker->dateTimeBetween('-30 days', now()),
                 'last_login_ip' => $faker->ipv4,
                 'user_id' => 16
@@ -475,6 +476,7 @@ class DatabaseSeeder extends Seeder
                 'address' => $faker->address,
                 'date_of_join' => $faker->dateTimeBetween('-2 years', now()),
                 'status' => 1,
+                'mark' => 8,
                 'last_login_date' => $faker->dateTimeBetween('-30 days', now()),
                 'last_login_ip' => $faker->ipv4,
                 'user_id' => 17
@@ -491,6 +493,7 @@ class DatabaseSeeder extends Seeder
                 'address' => $faker->address,
                 'date_of_join' => $faker->dateTimeBetween('-2 years', now()),
                 'status' => 2,
+                'mark' => 9,
                 'last_login_date' => $faker->dateTimeBetween('-30 days', now()),
                 'last_login_ip' => $faker->ipv4,
                 'user_id' => 18
@@ -507,6 +510,7 @@ class DatabaseSeeder extends Seeder
                 'address' => $faker->address,
                 'date_of_join' => $faker->dateTimeBetween('-2 years', now()),
                 'status' => 2,
+                'mark' => 10,
                 'last_login_date' => $faker->dateTimeBetween('-30 days', now()),
                 'last_login_ip' => $faker->ipv4,
                 'user_id' => 19
@@ -523,6 +527,7 @@ class DatabaseSeeder extends Seeder
                 'address' => $faker->address,
                 'date_of_join' => $faker->dateTimeBetween('-2 years', now()),
                 'status' => 1,
+                'mark' => 7,
                 'last_login_date' => $faker->dateTimeBetween('-30 days', now()),
                 'last_login_ip' => $faker->ipv4,
                 'user_id' => 20
@@ -539,6 +544,7 @@ class DatabaseSeeder extends Seeder
                 'address' => $faker->address,
                 'date_of_join' => $faker->dateTimeBetween('-2 years', now()),
                 'status' => 3,
+                'mark' => 9,
                 'last_login_date' => $faker->dateTimeBetween('-30 days', now()),
                 'last_login_ip' => $faker->ipv4,
                 'user_id' => 21

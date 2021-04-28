@@ -1,6 +1,36 @@
 @extends('front.layout.master_back')
 
-@section('title', 'Teacher | Profile')
+@section('title', 'Training Department | Profile')
+
+
+@section('account')
+
+    <div class="container1 css-drop">
+        <div class="half">
+            <label for="profile2" class="profile-dropdown">
+                <input type="checkbox" id="profile2"><img src="front/OnlineEdu/img/user/{{ $LoggedUserInfo->avatar }}"
+                                                          width="40px" height="40px" class="rounded-circle z-depth-0"
+                                                          alt="avatar image">
+                {{--        {{ $LoggedUserInfo->fname }}--}}
+                <span class="font-weight-bold">{{ $LoggedUserInfo->lname }} {{ $LoggedUserInfo->fname }}</span>
+                <label for="profile2"><i class="mdi mdi-menu"></i></label>
+                <ul>
+                    <li><a href="admin_profile"><i class="mdi mdi-email-outline"></i>Profile</a></li>
+                    <li><a href="admin_counselor"><i class="mdi mdi-email-outline"></i>Counselor</a></li>
+                    <li><a href="admin_staff"><i class="mdi mdi-email-outline"></i>Staff</a></li>
+                    <li><a href="admin_student"><i class="mdi mdi-email-outline"></i>Student</a></li>
+                    <li><a href="admin_grade"><i class="mdi mdi-email-outline"></i>Grades</a></li>
+                    {{--                <li><a href="#"><i class="mdi mdi-account"></i>Account</a></li>--}}
+                    {{--                <li><a href="#"><i class="mdi mdi-settings"></i>Settings</a></li>--}}
+                    <li><a href="logout"><i class="mdi mdi-logout"></i>Logout</a></li>
+                </ul>
+            </label>
+        </div>
+    </div>
+
+@endsection
+
+
 
 @section('body')
     <div class="container emp-profile">
@@ -8,17 +38,14 @@
             <div class="row">
                 <div class="col-md-4">
                     <div class="profile-img">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52y5aInsxSm31CvHOFHWujqUx_wWTS9iM6s7BAm21oEN_RiGoog" alt=""/>
-                        <div class="file btn btn-lg btn-primary">
-                            Change Photo
-                            <input type="file" name="file"/>
-                        </div>
+                        <img src="front/OnlineEdu/img/user/{{ $LoggedUserInfo->avatar }}" width="50%" alt=""/>
+
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="profile-head">
                         <h5>
-                            Đinh Tiến An
+                            {{ $LoggedUserInfo->lname }} {{ $LoggedUserInfo->fname }}
                         </h5>
                         <br><br>
                         <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -27,9 +54,6 @@
                             </li>
                         </ul>
                     </div>
-                </div>
-                <div class="col-md-2">
-                    <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile"/>
                 </div>
             </div>
             <div class="row">
@@ -42,7 +66,7 @@
                                     <label>ID</label>
                                 </div>
                                 <div class="col-md-6">
-                                    <p>0000</p>
+                                    <p>{{ $LoggedUserInfo->id }}</p>
                                 </div>
                             </div>
                             <div class="row">
@@ -50,7 +74,7 @@
                                     <label>Name</label>
                                 </div>
                                 <div class="col-md-6">
-                                    <p>Đinh Tiến An</p>
+                                    <p>{{$LoggedUserInfo->lname}} {{ $LoggedUserInfo->fname }}</p>
                                 </div>
                             </div>
                             <div class="row">
@@ -58,7 +82,7 @@
                                     <label>Email</label>
                                 </div>
                                 <div class="col-md-6">
-                                    <p>kshitighelani@gmail.com</p>
+                                    <p>{{ $email }}</p>
                                 </div>
                             </div>
                             <div class="row">
@@ -66,7 +90,7 @@
                                     <label>Phone</label>
                                 </div>
                                 <div class="col-md-6">
-                                    <p>123 456 7890</p>
+                                    <p>{{ $LoggedUserInfo->phone }}</p>
                                 </div>
                             </div>
                             <div class="row">
@@ -74,29 +98,13 @@
                                     <label>Date of birth</label>
                                 </div>
                                 <div class="col-md-6">
-                                    <p>01/01/2000</p>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <label>Date of join</label>
-                                </div>
-                                <div class="col-md-6">
-                                    <p>06/12/2019</p>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <label>Specialty</label>
-                                </div>
-                                <div class="col-md-6">
-                                    <p>Mainly Back-end</p>
+                                    <p>{{ $LoggedUserInfo->dob }}</p>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                   </div>
                 </div>
+            </div>
         </form>
     </div>
 @endsection
-

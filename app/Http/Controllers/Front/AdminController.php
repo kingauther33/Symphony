@@ -342,4 +342,21 @@ class AdminController extends Controller
 
         return back();
     }
+
+    // Profile Admin
+//    public function adminProfile() {
+//        return view('front.profile.students');
+//    }
+
+    public function adminProfile() {
+
+        if (session()->has('LoggedUser')) {
+            $user = Training_department::where('user_id', '=', session('LoggedUser'))->first();
+            $email = User::where('id', session('LoggedUser'))->first()->email;
+            $data = [
+                'LoggedUserInfo' => $user,
+            ];
+        }
+        return view('front.profile.admin',compact( 'email'), $data);
+    }
 }
