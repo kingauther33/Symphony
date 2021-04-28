@@ -217,6 +217,8 @@ class AdminController extends Controller
 
 
         Teacher::where('id', $rowId)->delete();
+        Teacher::where('id', $rowId)
+            ->update(['isDeleted' => 1]);
 
         return back();
     }
@@ -225,6 +227,8 @@ class AdminController extends Controller
 
 
         Counselor::where('id', $rowId)->delete();
+        Counselor::where('id', $rowId)
+            ->update(['isDeleted' => 1]);
 
         return back();
     }
@@ -233,6 +237,8 @@ class AdminController extends Controller
 
 
         Student::where('id', $rowId)->delete();
+        Student::where('id', $rowId)
+            ->update(['isDeleted' => 1]);
 
         return back();
     }

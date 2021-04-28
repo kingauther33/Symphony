@@ -30,6 +30,7 @@ Route::get('/instructor', [Front\HomeController::class, 'instructor']);
 Route::post('/contact', [Front\HomeController::class, 'subscribe']);
 Route::get('/login', [Front\UserAuthController::class, 'login'])->middleware('alreadyLoggedIn');
 Route::post('check', [Front\UserAuthController::class, 'check'])->name('admin.checklogin');
+Route::post('logout', [Front\UserAuthController::class, 'logout']);
 
 //Son
 
