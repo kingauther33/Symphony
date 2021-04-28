@@ -31,6 +31,7 @@ class CreateStudentsTable extends Migration
             $table->string('last_login_ip')->nullable();
 
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

@@ -210,4 +210,10 @@ class AdminController extends Controller
         return redirect('visitor');
     }
 
+//phong
+    public function delete($rowId){
+        Teacher::remove($rowId);
+
+        return back();
+    }
 }

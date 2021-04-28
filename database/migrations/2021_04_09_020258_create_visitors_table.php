@@ -26,8 +26,9 @@ class CreateVisitorsTable extends Migration
             $table->integer('entrance_mark')->nullable();
             $table->integer('course_id');
 
-
             $table->timestamps();
+            $table->softDeletes();
+
         });
     }
 

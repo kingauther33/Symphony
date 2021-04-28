@@ -27,9 +27,10 @@ class CreateTeachersTable extends Migration
             $table->string('specialty');
             $table->string('comment', 1000)->nullable();
             $table->date('last_login_date');
-            $table->string('last_login_ip');
+            $table->string('last_login_ip');$table->timestamps();
 
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

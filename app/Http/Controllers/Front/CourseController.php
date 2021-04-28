@@ -8,7 +8,7 @@ use App\Models\Visitor;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 
-class CourseController extends Controller
+class   CourseController extends Controller
 {
     //
     public function course() {
@@ -42,10 +42,6 @@ class CourseController extends Controller
     }
 
     public function new_course(Request $request) {
-        $request->validate([
-            'email' => 'email',
-            'course_id' => 'regex:/[1-3]{1}/'
-        ]);
 
         $subcribe = new Visitor();
         $subcribe->fname = $request->fname;

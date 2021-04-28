@@ -27,6 +27,7 @@ class CreateTrainingDepartmentsTable extends Migration
             $table->string('last_login_ip')->nullable();
 
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
