@@ -215,42 +215,30 @@ class AdminController extends Controller
 
 //phong
     public function deleteStaff($rowId){
-
-
         Teacher::where('id', $rowId)->delete();
         DB::table('teachers')->where('id', $rowId)->update(['isDeleted' => 1]);
-
 
         return back();
     }
 
     public function deleteCounselor($rowId){
-
-
         Counselor::where('id', $rowId)->delete();
         DB::table('counselors')->where('id', $rowId)->update(['isDeleted' => 1]);
-
 
         return back();
     }
 
     public function deleteStudent($rowId){
-
-
         Student::where('id', $rowId)->delete();
         DB::table('students')->where('id', $rowId)->update(['isDeleted' => 1]);
 
-
         return back();
     }
-   
+
 
     public function deleteClass($rowId){
-
-
         Grade::where('id', $rowId)->delete();
         DB::table('grades')->where('id', $rowId)->update(['isDeleted' => 1]);
-
 
         return back();
     }
