@@ -20,6 +20,7 @@ class CreateExamTypesTable extends Migration
             $table->string('name', 100);
 
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

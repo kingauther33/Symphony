@@ -21,6 +21,7 @@ class CreateCoursesTable extends Migration
             $table->string('image_path');
 
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
