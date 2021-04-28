@@ -10,6 +10,8 @@
 
     <link rel="stylesheet" href="front/admin/css/owl.carousel.min.css">
 
+    <link rel="stylesheet" href="front/admin/css/dropdown.css">
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="front/admin/css/bootstrap.min.css">
 
@@ -56,7 +58,7 @@
 
         <form class="navbar-search pl-0 ml-auto mt-3 mb-2 mt-md-0 mb-md-0 mr-3" action="">
             <div class="input-group d-block d-md-flex mb-0">
-                <div class="input-group-prepend">
+                <div class="input-group-prepend"></div>
             </div>
         </form>
 
@@ -71,19 +73,24 @@
                     <!-- Right -->
                     <ul class="navbar-nav nav-flex-icons ml-auto">
                         <li class="nav-item avatar dropdown d-flex align-items-center">
-                            <a class="nav-link dropdown-toggle"   id="navbarDropdownMenuLink-55" data-toggle="dropdown"
-                               aria-haspopup="true" aria-expanded="false">
-                                <img src="https://mdbootstrap.com/img/Photos/Avatars/img (31).jpg" width="40px" height="40px"  class="rounded-circle z-depth-0"
-                                     alt="avatar image">
-                                Đinh Tiến An
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li href="#">HTML</li>
-                                <li href="#">JS</li>
-                                <li href="#">CSS</li>
-                            </ul>
+{{--                            <a class="nav-link dropdown-toggle"   id="navbarDropdownMenuLink-55" data-toggle="dropdown"--}}
+{{--                               aria-haspopup="true" aria-expanded="false">--}}
+{{--                                <img src="https://mdbootstrap.com/img/Photos/Avatars/img (31).jpg" width="40px" height="40px"  class="rounded-circle z-depth-0"--}}
+{{--                                     alt="avatar image">--}}
+{{--                                Đinh Tiến An--}}
+{{--                            </a>--}}
+{{--                            <ul class="dropdown-menu">--}}
+{{--                                <li href="#">HTML</li>--}}
+{{--                                <li href="#">JS</li>--}}
+{{--                                <li href="#">CSS</li>--}}
+{{--                            </ul>--}}
+                            @yield('account')
+
                         </li>
                     </ul>
+
+
+
 
                 </div>
                 <!-- Links -->

@@ -11,6 +11,6 @@
     <i class="far fa-question-circle fa-spin"></i>
     <div class="err2">4</div>
     <div class="msg">ERROR: You do not have permission to access this page, please try another page :D
-        <p>We'll redirect you back to your page in a momment :)</p>
+        <p>Click <a href="/">here</a> to redirect back to home page.</p>
     </div>
 </div>

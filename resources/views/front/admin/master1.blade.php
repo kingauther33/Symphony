@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="front/admin/css/bootstrap.min.css">
 
     <!-- Style -->
-{{--    <link rel="stylesheet" href="front/admin/css/dropdown.css">--}}
+    <link rel="stylesheet" href="front/admin/css/dropdown.css">
 
     <link rel="stylesheet" href="front/admin/css/dropdown.css">
     <link rel="stylesheet" href="front/admin/css/1.css">
