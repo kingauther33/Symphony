@@ -7,6 +7,7 @@ use App\Models\Counselor;
 use App\Models\Grade;
 use App\Models\Student;
 use App\Models\Teacher;
+use App\Models\Visitor;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 
@@ -183,6 +184,30 @@ class AdminController extends Controller
 
         return redirect('counselor')
             ->with('message', '<div class="alert alert-success">Counselor Added Successfully!</div>');;
+    }
+
+    public function visitor() {
+        $visitors = Visitor::all();
+
+        return view('front.counselor.visitor', compact('visitors'));
+    }
+
+    public function addVisitor(Request $request) {
+
+
+        $visitors = new Visitor();
+        $visitors->fname = $request->fname;
+        $visitors->lname = $request->lname;
+        $visitors->email = $request->email;
+        $visitors->phone = $request->phone;
+        $visitors->dob = $request->dob;
+        $visitors->address = $request->address;
+        $visitors->status = $request->status;
+        $visitors->entrance_mark = $request->entrance_mark;
+
+        $visitors->save();
+
+        return redirect('visitor');
     }
 
     public function sssss() {

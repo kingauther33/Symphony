@@ -58,6 +58,8 @@ Route::get('/search_exam', [Front\CourseController::class, 'search_exam']);
 
 //Route::get('/admin', [Front\AdminController::class, 'admin']);
 
+// Admin
+
 Route::get('/admin_staff', [Front\AdminController::class, 'staff'])->name('admin.staff');
 
 Route::get('/admin_student', [Front\AdminController::class, 'student']);
@@ -82,9 +84,14 @@ Route::get('/admin_addcounselor', [Front\AdminController::class, 'addCounselor']
 
 Route::post('/admin_addcounselor', [Front\AdminController::class, 'addCounselor1'])->name('admin.addcounselor');
 
+// Counselor
+
+Route::get('/visitor', [Front\AdminController::class, 'visitor']);
+
 //Phong
 
 Route::post('/courses', [Front\CourseController::class, 'new_course']);
 
 Route::get('/courses', [Front\CourseController::class, 'course']);
 
+Route::get('/students', [Front\AdminController::class, 'sssss']);
