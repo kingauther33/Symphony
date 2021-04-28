@@ -78,7 +78,7 @@ class AdminController extends Controller
         $addstudent->save();
 
         return redirect('student')
-            ->with('message', '<div class="alert alert-success">Student Added Successfully!</div>');;
+            ->with('message', '<div class="alert alert-success">Student Added Successfully!</div>');
     }
 
     public function addCourse()
@@ -106,7 +106,7 @@ class AdminController extends Controller
         $addcourse->save();
 
         return redirect('class')
-            ->with('message', '<div class="alert alert-success">Course Added Successfully!</div>');;
+            ->with('message', '<div class="alert alert-success">Course Added Successfully!</div>');
     }
 
     public function addProfessor()
@@ -184,7 +184,7 @@ class AdminController extends Controller
         $counselors->save();
 
         return redirect('counselor')
-            ->with('message', '<div class="alert alert-success">Counselor Added Successfully!</div>');;
+            ->with('message', '<div class="alert alert-success">Counselor Added Successfully!</div>');
     }
 
 
@@ -217,8 +217,8 @@ class AdminController extends Controller
 
 
         Teacher::where('id', $rowId)->delete();
-        Teacher::where('id', $rowId)
-            ->update(['isDeleted' => 1]);
+        DB::table('teachers')->where('id', $rowId)->update(['isDeleted' => 1]);
+
 
         return back();
     }
@@ -227,8 +227,8 @@ class AdminController extends Controller
 
 
         Counselor::where('id', $rowId)->delete();
-        Counselor::where('id', $rowId)
-            ->update(['isDeleted' => 1]);
+        DB::table('counselors')->where('id', $rowId)->update(['isDeleted' => 1]);
+
 
         return back();
     }
@@ -237,8 +237,8 @@ class AdminController extends Controller
 
 
         Student::where('id', $rowId)->delete();
-        Student::where('id', $rowId)
-            ->update(['isDeleted' => 1]);
+        DB::table('students')->where('id', $rowId)->update(['isDeleted' => 1]);
+
 
         return back();
     }
@@ -247,8 +247,7 @@ class AdminController extends Controller
 
 
         Grade::where('id', $rowId)->delete();
-        Grade::where('id', $rowId)
-            ->update(['isDeleted' => 1]);
+        DB::table('grades')->where('id', $rowId)->update(['isDeleted' => 1]);
 
         return back();
     }
