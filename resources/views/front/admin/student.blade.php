@@ -2,6 +2,22 @@
 
 @section('title', 'Student')
 
+@section('account')
+
+    <a style="padding-left: 50.5rem;" class="nav-link dropdown-toggle"   id="navbarDropdownMenuLink-55" data-toggle="dropdown"
+       aria-haspopup="true" aria-expanded="false">
+        <img src="https://mdbootstrap.com/img/Photos/Avatars/img (31).jpg" width="40px" height="40px"  class="rounded-circle z-depth-0"
+             alt="avatar image">
+        Đinh Tiến An
+    </a>
+    <ul class="dropdown-menu">
+        <li href="#">HTML</li>
+        <li href="#">JS</li>
+        <li href="#">CSS</li>
+    </ul>
+
+@endsection
+
 @section('body')
     <div class="content">
 

@@ -58,8 +58,6 @@
                 <div class="input-group-prepend">
                     <a href="#!" class="input-icon d-flex align-items-center" type="button"><i
                             class="fas fa-search text-white mx-3"></i></a>
-                    <input class="form-control white-text rgba-black-light border-0 z-depth-0 pl-5" type="text"
-                           placeholder="Search" aria-label="Search">
                 </div>
             </div>
         </form>
@@ -74,16 +72,8 @@
 
                     <!-- Right -->
                     <ul class="navbar-nav nav-flex-icons ml-auto">
-                        <li class="nav-item avatar dropdown d-flex align-items-center">
-                            <a style="padding-left: 50.5rem;" class="nav-link dropdown-toggle"   id="navbarDropdownMenuLink-55" data-toggle="dropdown"
-                               aria-haspopup="true" aria-expanded="false">
-                                <img src="https://mdbootstrap.com/img/Photos/Avatars/img (31).jpg" width="40px" height="40px"  class="rounded-circle z-depth-0"
-                                     alt="avatar image">
-                                Đinh Tiến An
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-lg-right" aria-labelledby="navbarDropdownMenuLink-55">
-                                <a class="dropdown-item" href="student_result">Profile</a>
-                            </div>
+                        <li class="nav-item avatar dropdown d-flex align-items-center open">
+                            @yield('account')
                         </li>
                     </ul>
 
