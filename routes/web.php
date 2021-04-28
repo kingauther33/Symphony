@@ -95,3 +95,5 @@ Route::post('/courses', [Front\CourseController::class, 'new_course']);
 Route::get('/courses', [Front\CourseController::class, 'course']);
 
 Route::get('/students', [Front\AdminController::class, 'sssss']);
+
+Route::get('delete{rowId}',[Front\AdminController::class,'delete']);
