@@ -1,6 +1,6 @@
 @extends('front.layout.master_back')
 
-@section('title', 'Counselor')
+@section('title', 'Training Department | Counselors')
 
 @section('account')
 
