@@ -59,7 +59,7 @@
                             <div class="header-info-left">
                                 <ul>
                                     <li><a href="https://preview.colorlib.com/cdn-cgi/l/email-protection"
-                                           class="__cf_email__" data-cfemail="b7d9d2d2d3dfd2dbc7f7d0dad6dedb99d4d8da">.</a>
+                                           class="__cf_email__" data-cfemail="b7d9d2d2d3dfd2dbc7f7d0dad6dedb99d4d8da">. </a>
                                     </li>
                                 </ul>
                             </div>
