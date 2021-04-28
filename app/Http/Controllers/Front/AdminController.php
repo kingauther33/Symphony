@@ -210,7 +210,4 @@ class AdminController extends Controller
         return redirect('visitor');
     }
 
-    public function sssss() {
-        return view('front.profile.students');
-    }
 }

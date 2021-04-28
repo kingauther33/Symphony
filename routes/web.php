@@ -93,5 +93,3 @@ Route::get('/visitor', [Front\AdminController::class, 'visitor']);
 Route::post('/courses', [Front\CourseController::class, 'new_course']);
 
 Route::get('/courses', [Front\CourseController::class, 'course']);
-
-Route::get('/students', [Front\AdminController::class, 'sssss']);
