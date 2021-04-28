@@ -213,4 +213,11 @@ class AdminController extends Controller
     public function sssss() {
         return view('front.profile.students');
     }
+
+//phong
+    public function delete($rowId){
+        Teacher::remove($rowId);
+
+        return back();
+    }
 }
