@@ -95,10 +95,21 @@ Route::get('admin_staff/delete/{rowId}',[Front\AdminController::class,'deleteSta
 
 Route::get('admin_counselor/delete/{rowId}',[Front\AdminController::class,'deleteCounselor']);
 
+
+Route::get('admin_counselor/delete/{rowId}',[Front\AdminController::class,'delete1']);
+
+Route::get('admin_student/delete/{rowId}',[Front\AdminController::class,'delete2']);
+
+Route::get('admin_class/delete/{rowId}',[Front\AdminController::class,'delete3']);
+
+Route::get('visitor/delete/{rowId}',[Front\AdminController::class,'delete4']);
+
+
+
 Route::get('admin_student/delete/{rowId}',[Front\AdminController::class,'deleteStudent']);
 
 Route::get('admin_class/delete/{rowId}',[Front\AdminController::class,'deleteClass']);
 
-Route::get('delete{rowId}',[Front\AdminController::class,'delete']);
+
 
 
