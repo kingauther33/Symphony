@@ -14,7 +14,9 @@
     <link rel="stylesheet" href="front/admin/css/bootstrap.min.css">
 
     <!-- Style -->
-    <link rel="stylesheet" href="front/counselor/css/visitor.css">
+    <link rel="stylesheet" href="front/admin/css/dropdown.css">
+
+    <link rel="stylesheet" href="front/admin/css/dropdown.css">
     <link rel="stylesheet" href="front/admin/css/1.css">
     <link rel="stylesheet" href="front/admin/css/style.css">
     <link rel="stylesheet" href="front/OnlineEdu/css/style.css">
@@ -57,6 +59,7 @@
         <form class="navbar-search pl-0 ml-auto mt-3 mb-2 mt-md-0 mb-md-0 mr-3" action="">
             <div class="input-group d-block d-md-flex mb-0">
                 <div class="input-group-prepend">
+                </div>
             </div>
         </form>
 
@@ -70,18 +73,8 @@
 
                     <!-- Right -->
                     <ul class="navbar-nav nav-flex-icons ml-auto">
-                        <li class="nav-item avatar dropdown d-flex align-items-center">
-                            <a class="nav-link dropdown-toggle"   id="navbarDropdownMenuLink-55" data-toggle="dropdown"
-                               aria-haspopup="true" aria-expanded="false">
-                                <img src="https://mdbootstrap.com/img/Photos/Avatars/img (31).jpg" width="40px" height="40px"  class="rounded-circle z-depth-0"
-                                     alt="avatar image">
-                                Đinh Tiến An
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li href="#">HTML</li>
-                                <li href="#">JS</li>
-                                <li href="#">CSS</li>
-                            </ul>
+                        <li class="nav-item avatar dropdown d-flex align-items-center open">
+                            @yield('account')
                         </li>
                     </ul>
 
@@ -100,28 +93,55 @@
 
 
 <header>
-    <div class="header-area">
-        <div class="header-bottom header-sticky">
-            <div class="container">
-                <div class="menu-wrapper">
+<div class="header-area">
+    <div class="header-bottom header-sticky">
+        <div class="container">
+            <div class="menu-wrapper">
 
-                    <div class="logo logo2 d-block d-lg-none">
-                        <a href="index-2.html"><img src="front/OnlineEdu/img/logo/logo.png" alt=""></a>
-                    </div>
-
-                    <div class="main-menu d-none d-lg-block">
-                        <div class="page-title">
-                            <h2>Visitors List</h2>
-                        </div>
-                    </div>
+                <div class="logo logo2 d-block d-lg-none">
+                    <a href="index-2.html"><img src="front/OnlineEdu/img/logo/logo.png" alt=""></a>
                 </div>
 
-                <div class="col-12">
-                    <div class="mobile_menu d-block d-lg-none"></div>
+                <div class="main-menu d-none d-lg-block">
+                    <nav>
+                        <ul id="navigation">
+                            <li class="{{ (request()->segment(1) == 'counselor') ? 'active' : '' }}"><a href="admin_counselor">Counselor</a></li>
+                            <li class="{{ (request()->segment(1) == 'staff') ? 'active' : '' }}"><a href="admin_staff">Staff</a>
+                                <ul class="submenu">
+                                    <li><a href="#">All Teachers</a></li>
+                                    <li><a href="#">Add Teacher</a></li>
+                                </ul>
+                            </li>
+                            <li class="{{ (request()->segment(1) == 'student') ? 'active' : '' }}"><a href="admin_student">Student</a>
+                                <ul class="submenu">
+                                    <li><a href="#">All Students</a></li>
+                                    <li><a href="#">Admission Form</a></li>
+                                </ul>
+                            </li>
+                            <li class="{{ (request()->segment(1) == 'class') ? 'active' : '' }}"><a href="admin_grade">Classes</a>
+                                <ul class="submenu">
+                                    <li><a href="#">All Classes</a></li>
+                                    <li><a href="#">Add New Class</a></li>
+                                </ul>
+                            </li>
+                            <li class="{{ (request()->segment(1) == '') ? 'active' : '' }}"><a href=""></a>
+                                {{--<ul class="submenu">
+                                    <li><a href="blog.html">Blog</a></li>
+                                    <li><a href="blog_details.html">Blog Details</a></li>
+                                    <li><a href="elements.html">Element</a></li>
+                                </ul>--}}
+                            </li>
+                        </ul>
+                    </nav>
                 </div>
+            </div>
+
+            <div class="col-12">
+                <div class="mobile_menu d-block d-lg-none"></div>
             </div>
         </div>
     </div>
+</div>
 </header>
 
 
@@ -129,7 +149,6 @@
 
 
 @yield('body')
-
 
 
 <script src="front/OnlineEdu/js/vendor/modernizr-3.5.0.min.js"></script>
@@ -164,10 +183,10 @@
 <script src="front/OnlineEdu/js/plugins.js"></script>
 <script src="front/OnlineEdu/js/main.js"></script>
 
-<script src="front/admin/js/jquery-3.3.1.min.js"></script>
-<script src="front/admin/js/popper.min.js"></script>
-<script src="front/admin/js/bootstrap.min.js"></script>
-<script src="front/admin/js/main.js"></script>
+<script src="front/counselor/js/jquery-3.3.1.min.js"></script>
+<script src="front/counselor/js/popper.min.js"></script>
+<script src="front/counselor/js/bootstrap.min.js"></script>
+<script src="front/counselor/js/main.js"></script>
 @yield('script')
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
@@ -181,4 +200,3 @@
 
 </body>
 </html>
-

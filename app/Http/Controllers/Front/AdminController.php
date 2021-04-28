@@ -7,6 +7,7 @@ use App\Models\Counselor;
 use App\Models\Grade;
 use App\Models\Student;
 use App\Models\Teacher;
+use App\Models\Training_department;
 use App\Models\Visitor;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
@@ -22,30 +23,61 @@ class AdminController extends Controller
         return view('front.login.login');
     }
 
-    public function staff()
+    public function adminStaff()
     {
         $professors = Teacher::all();
 
-        return view('front.admin.staff', compact('professors'));
+        // Session when logged in
+        if (session()->has('LoggedUser')) {
+            $user = Training_department::where('user_id', '=', session('LoggedUser'))->first();
+            $data = [
+                'LoggedUserInfo' => $user
+            ];
+        }
+
+        return view('front.admin.staff', compact('professors'), $data);
     }
 
-    public function student()
+    public function adminStudent()
     {
         $students = Student::all();
 
-        return view('front.admin.student', compact('students'));
+        // Session when logged in
+        if (session()->has('LoggedUser')) {
+            $user = Training_department::where('user_id', '=', session('LoggedUser'))->first();
+            $data = [
+                'LoggedUserInfo' => $user
+            ];
+        }
+
+        return view('front.admin.student', compact('students'), $data);
     }
 
-    public function grade()
+    public function adminGrade()
     {
         $grades = Grade::all();
 
-        return view('front.admin.grade', compact('grades'));
+        // Session when logged in
+        if (session()->has('LoggedUser')) {
+            $user = Training_department::where('user_id', '=', session('LoggedUser'))->first();
+            $data = [
+                'LoggedUserInfo' => $user
+            ];
+        }
+
+        return view('front.admin.grade', compact('grades'), $data);
     }
 
     public function addStudent()
     {
-        return view('front.admin.add.addstudent');
+        if (session()->has('LoggedUser')) {
+            $user = Training_department::where('user_id', '=', session('LoggedUser'))->first();
+            $data = [
+                'LoggedUserInfo' => $user
+            ];
+        }
+
+        return view('front.admin.add.addstudent', $data);
     }
 
     public function addStudent1(Request $request) {
@@ -84,7 +116,14 @@ class AdminController extends Controller
 
     public function addCourse()
     {
-        return view('front.admin.add.addcourse');
+        if (session()->has('LoggedUser')) {
+            $user = Training_department::where('user_id', '=', session('LoggedUser'))->first();
+            $data = [
+                'LoggedUserInfo' => $user
+            ];
+        }
+
+        return view('front.admin.add.addcourse', $data);
     }
 
     public function addCourse1(Request $request) {
@@ -112,7 +151,14 @@ class AdminController extends Controller
 
     public function addProfessor()
     {
-        return view('front.admin.add.addprofessor');
+        if (session()->has('LoggedUser')) {
+            $user = Training_department::where('user_id', '=', session('LoggedUser'))->first();
+            $data = [
+                'LoggedUserInfo' => $user
+            ];
+        }
+
+        return view('front.admin.add.addprofessor', $data);
     }
 
     public function addProfessor1(Request $request) {
@@ -153,14 +199,29 @@ class AdminController extends Controller
 
     }
 
-    public function counselor() {
+    public function adminCounselor() {
         $counselors = Counselor::all();
 
-        return view('front.admin.counselor', compact('counselors'));
+        // Session when logged in
+        if (session()->has('LoggedUser')) {
+            $user = Training_department::where('user_id', '=', session('LoggedUser'))->first();
+            $data = [
+                'LoggedUserInfo' => $user
+            ];
+        }
+
+        return view('front.admin.counselor', compact('counselors'), $data);
     }
 
     public function addCounselor() {
-        return view('front.admin.add.addcounselor');
+        if (session()->has('LoggedUser')) {
+            $user = Training_department::where('user_id', '=', session('LoggedUser'))->first();
+            $data = [
+                'LoggedUserInfo' => $user
+            ];
+        }
+
+        return view('front.admin.add.addcounselor', $data);
     }
 
     public function addCounselor1(Request $request) {
@@ -192,7 +253,14 @@ class AdminController extends Controller
     public function visitor() {
         $visitors = Visitor::all();
 
-        return view('front.counselor.visitor', compact('visitors'));
+        if (session()->has('LoggedUser')) {
+            $user = Counselor::where('user_id', '=', session('LoggedUser'))->first();
+            $data = [
+                'LoggedUserInfo' => $user
+            ];
+        }
+
+        return view('front.counselor.visitor', compact('visitors'), $data);
     }
 
     public function addVisitor(Request $request) {
@@ -213,7 +281,6 @@ class AdminController extends Controller
         return redirect('visitor');
     }
 
-//phong
     public function deleteStaff($rowId){
         Teacher::where('id', $rowId)->delete();
         DB::table('teachers')->where('id', $rowId)->update(['isDeleted' => 1]);
@@ -235,11 +302,11 @@ class AdminController extends Controller
         return back();
     }
 
-    public function delete4($rowId)
+    public function deleteVisitor($rowId)
     {
 
         Visitor::where('id', $rowId)->delete();
-        DB::table('visitor')->where('id', $rowId)->update(['isDeleted' => 1]);
+        DB::table('visitors')->where('id', $rowId)->update(['isDeleted' => 1]);
 
         return back();
 

@@ -30,25 +30,32 @@ Route::get('/instructor', [Front\HomeController::class, 'instructor']);
 /*Route::post('/contact', [Front\HomeController::class, 'subscribe']);*/
 Route::get('/login', [Front\UserAuthController::class, 'login'])->middleware('alreadyLoggedIn');
 Route::post('check', [Front\UserAuthController::class, 'check'])->name('admin.checklogin');
-Route::post('logout', [Front\UserAuthController::class, 'logout']);
+Route::get('logout', [Front\UserAuthController::class, 'logout']);
+Route::get('error', [Front\HomeController::class, 'error']);
 
 //Son
 
 Route::get('/student_result', [Front\StudentController::class, 'result']);
-Route::get('/student_profile', [Front\StudentController::class, 'profile'])->name('student.profile')->middleware('isLogged');
+Route::get('/student_profile', [Front\StudentController::class, 'profile'])
+    ->name('student.profile')
+    ->middleware('isLoggedStudent');
 Route::post('/student_profile', [Front\StudentController::class, 'postProfile']);
 Route::post('/contact', [Front\HomeController::class, 'sendmail'])->name('contact_mail');
 Route::get('/counselor', [Front\HomeController::class, 'counselor'])->name('counselor.home')->middleware('isLogged');
 
 
 
+Route::get('/visitor', [Front\HomeController::class, 'visitor']);
+//    ->middleware('isLogged');
+
+
 
 //Route::post('/contact', [Front\HomeController::class, 'subscribe'])->name('contact_subscribe');
 
-Route::get('/counselor', [Front\HomeController::class, 'counselor']);
 
-Route::post('/counselor', [Front\HomeController::class, 'postCounselor']);
-Route::get('/teacher', [Front\HomeController::class, 'teacher'])->name('teacher.home')->middleware('isLogged');
+Route::get('/teacher', [Front\HomeController::class, 'teacher'])
+    ->name('teacher.home')
+    ->middleware('isLoggedTeacher');
 Route::post('/teacher', [Front\HomeController::class, 'postTeacher']);
 
 
@@ -66,10 +73,19 @@ Route::get('/search_exam', [Front\CourseController::class, 'search_exam']);
 
 // Admin
 
-Route::get('/admin_staff', [Front\AdminController::class, 'staff'])->name('admin.staff')->middleware('isLogged');
-Route::get('/admin_student', [Front\AdminController::class, 'student'])->name('admin.student');
-Route::get('/admin_grade', [Front\AdminController::class, 'grade'])->name('admin.grade');
-Route::get('/admin_counselor', [Front\AdminController::class, 'counselor'])->name('admin.counselor');
+Route::get('/admin_staff', [Front\AdminController::class, 'adminStaff'])
+    ->name('admin.staff')
+    ->middleware('isLoggedAdmin');
+Route::get('/admin_student', [Front\AdminController::class, 'adminStudent'])
+    ->name('admin.student')
+    ->middleware('isLoggedAdmin');
+
+Route::get('/admin_grade', [Front\AdminController::class, 'adminGrade'])
+    ->name('admin.grade')
+    ->middleware('isLoggedAdmin');
+Route::get('/admin_counselor', [Front\AdminController::class, 'adminCounselor'])
+    ->name('admin.counselor')
+    ->middleware('isLoggedAdmin');
 Route::get('/admin_addstudent', [Front\AdminController::class, 'addStudent']);
 Route::post('/admin_addstudent', [Front\AdminController::class, 'addStudent1'])->name('admin.addstudent');
 Route::get('/admin_addcourse', [Front\AdminController::class, 'addCourse']);
@@ -81,7 +97,9 @@ Route::post('/admin_addcounselor', [Front\AdminController::class, 'addCounselor1
 
 // Counselor
 
-Route::get('/visitor', [Front\AdminController::class, 'visitor']);
+Route::get('/visitor', [Front\AdminController::class, 'visitor'])
+    ->name('counselor.home')
+    ->middleware('isLoggedCounselor');
 
 //Phong
 
@@ -93,15 +111,7 @@ Route::get('admin_staff/delete/{rowId}', [Front\AdminController::class, 'deleteS
 
 Route::get('admin_counselor/delete/{rowId}', [Front\AdminController::class, 'deleteCounselor']);
 
-
-Route::get('admin_counselor/delete/{rowId}', [Front\AdminController::class, 'delete1']);
-
-Route::get('admin_student/delete/{rowId}', [Front\AdminController::class, 'delete2']);
-
-Route::get('admin_grade/delete/{rowId}', [Front\AdminController::class, 'delete3']);
-
-Route::get('visitor/delete/{rowId}', [Front\AdminController::class, 'delete4']);
-
+Route::get('visitor/delete/{rowId}', [Front\AdminController::class, 'deleteVisitor']);
 
 Route::get('admin_student/delete/{rowId}', [Front\AdminController::class, 'deleteStudent']);
 

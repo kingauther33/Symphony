@@ -33,7 +33,6 @@ class UserAuthController extends Controller
 
                 switch ($user->role_id) {
                     case 1:
-                        dd(session('LoggedUser'));
                         return redirect()->route('counselor.home'); // Counselor
                     case 2:
                         return redirect()->route('admin.staff'); // Training Department / ADMIN

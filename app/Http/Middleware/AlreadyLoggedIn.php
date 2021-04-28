@@ -16,8 +16,16 @@ class AlreadyLoggedIn
      */
     public function handle(Request $request, Closure $next)
     {
-        if(session()->has('LoggedUser') && (url('login') == $request->url())) {
-            return back();
+        if(session()->has('LoggedUser')) {
+            if (session('LoggedRole') == 2  && (url('login') == $request->url())) {
+                return redirect()->route('admin.staff');
+            } else if (session('LoggedRole') == 1  && (url('login') == $request->url())) {
+                return redirect()->route('counselor.home');
+            } else if (session('LoggedRole') == 3  && (url('login') == $request->url())) {
+                return redirect()->route('teacher.home');
+            } else if (session('LoggedRole') == 4  && (url('login') == $request->url())) {
+                return redirect()->route('student.profile');
+            }
         }
 
         return $next($request);

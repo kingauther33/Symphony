@@ -1,4 +1,4 @@
-@extends('front.admin.master1')
+@extends('front.layout.master_back')
 
 @section('title', 'Add Student')
 
@@ -9,33 +9,18 @@
             <label for="profile2" class="profile-dropdown">
                 <input type="checkbox" id="profile2"><img src="https://mdbootstrap.com/img/Photos/Avatars/img (31).jpg" width="40px" height="40px"  class="rounded-circle z-depth-0"
                                                           alt="avatar image">
-                <span>Đinh Tiến An</span>
+                {{--        {{ $LoggedUserInfo->fname }}--}}
+                <span>{{ $LoggedUserInfo->lname }} {{ $LoggedUserInfo->fname }}</span>
                 <label for="profile2"><i class="mdi mdi-menu"></i></label>
                 <ul>
-                    <li><a href="#"><i class="mdi mdi-email-outline"></i>Messages</a></li>
-                    <li><a href="#"><i class="mdi mdi-account"></i>Account</a></li>
-                    <li><a href="#"><i class="mdi mdi-settings"></i>Settings</a></li>
-                    <li><a href="#"><i class="mdi mdi-logout"></i>Logout</a></li>
+                    <li><a href="#"><i class="mdi mdi-email-outline"></i>Profile</a></li>
+                    {{--                <li><a href="#"><i class="mdi mdi-account"></i>Account</a></li>--}}
+                    {{--                <li><a href="#"><i class="mdi mdi-settings"></i>Settings</a></li>--}}
+                    <li><a href="logout"><i class="mdi mdi-logout"></i>Logout</a></li>
                 </ul>
             </label>
         </div>
     </div>
-
-@endsection
-
-@section('account')
-
-    <a class="nav-link dropdown-toggle"   id="navbarDropdownMenuLink-55" data-toggle="dropdown"
-       aria-haspopup="true" aria-expanded="false">
-        <img src="https://mdbootstrap.com/img/Photos/Avatars/img (31).jpg" width="40px" height="40px"  class="rounded-circle z-depth-0"
-             alt="avatar image">
-        Đinh Tiến An
-    </a>
-    <ul class="dropdown-menu">
-        <li href="#">HTML</li>
-        <li href="#">JS</li>
-        <li href="#">CSS</li>
-    </ul>
 
 @endsection
 

@@ -105,4 +105,9 @@ class HomeController extends Controller
         return "success";
     }
 
+    public function error() {
+        
+
+        return view('front.error.error');
+    }
 }
