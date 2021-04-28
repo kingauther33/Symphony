@@ -72,7 +72,7 @@
 
                     <!-- Right -->
                     <ul class="navbar-nav nav-flex-icons ml-auto">
-                        <li class="nav-item avatar dropdown d-flex align-items-center">
+                        <li class="nav-item avatar dropdown d-flex align-items-center open">
                             @yield('account')
                         </li>
                     </ul>

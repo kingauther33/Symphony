@@ -36,8 +36,14 @@ Route::post('check', [Front\UserAuthController::class, 'check'])->name('admin.ch
 Route::get('/student_result', [Front\StudentController::class, 'result']);
 Route::get('/student_profile', [Front\StudentController::class, 'profile'])->name('student.profile')->middleware('isLogged');
 Route::post('/student_profile', [Front\StudentController::class, 'postProfile']);
-Route::post('/contact', [Front\HomeController::class, 'sendmail']);
+Route::post('/contact', [Front\HomeController::class, 'sendmail'])->name('contact_mail');
 Route::get('/counselor',[Front\HomeController::class,'counselor'])->name('counselor.home')->middleware('isLogged');
+
+
+Route::post('/contact', [Front\HomeController::class, 'subscribe'])->name('contact_subscribe');
+
+Route::get('/counselor',[Front\HomeController::class,'counselor']);
+
 Route::post('/counselor',[Front\HomeController::class,'postCounselor']);
 Route::get('/teacher',[Front\HomeController::class,'teacher'])->name('teacher.home')->middleware('isLogged');
 Route::post('/teacher',[Front\HomeController::class,'postTeacher']);

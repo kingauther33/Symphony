@@ -1,3 +1,4 @@
+
 @section('styles')
     <link rel="stylesheet" href="front/OnlineEdu/css/email.css">
     @endsection
@@ -32,4 +33,3 @@
 </div>
 
 </body>
-
