@@ -10,9 +10,11 @@
              alt="avatar image">
         Đinh Tiến An
     </a>
-    <div class="dropdown-menu dropdown-menu-lg-right" aria-labelledby="navbarDropdownMenuLink-55">
-        <a class="dropdown-item" href="student_result">Profile</a>
-    </div>
+    <ul class="dropdown-menu">
+        <li href="#">HTML</li>
+        <li href="#">JS</li>
+        <li href="#">CSS</li>
+    </ul>
 
 @endsection
 
