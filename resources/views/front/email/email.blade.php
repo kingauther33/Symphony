@@ -43,7 +43,7 @@
     <p>Sincerly,</p>
             <td>
                 <div class="signature-name">Online Edu<br> <span class="signature-title">Symphony Limited</span> </div>
-                <div class="signature-contact">Get Phone and Emails on<br><a href="resources/views/front/contact/contact.blade.php">Phone</a>&nbsp;&nbsp;-&nbsp;&nbsp;<a href="resources/views/front/contact/contact.blade.php">Email</a>&nbsp;&nbsp;-&nbsp;&nbsp;Skype</div>
+                <div class="signature-contact">Get Phone and Emails on<br><a href="contact">Phone</a>&nbsp;&nbsp;-&nbsp;&nbsp;<a href="contact">Email</a>&nbsp;&nbsp;-&nbsp;&nbsp;Skype</div>
             </td>
         </tr>
         </tbody>
