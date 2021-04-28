@@ -36,8 +36,9 @@ Route::get('error', [Front\HomeController::class, 'error']);
 //Son
 
 Route::get('/student_result', [Front\StudentController::class, 'result']);
-Route::get('/student_profile', [Front\StudentController::class, 'profile'])->name('student.profile');
-//    ->middleware('isLogged');
+Route::get('/student_profile', [Front\StudentController::class, 'profile'])
+    ->name('student.profile')
+    ->middleware('isLoggedStudent');
 Route::post('/student_profile', [Front\StudentController::class, 'postProfile']);
 Route::post('/contact', [Front\HomeController::class, 'sendmail'])->name('contact_mail');
 Route::get('/visitor', [Front\HomeController::class, 'visitor']);
@@ -47,8 +48,9 @@ Route::get('/visitor', [Front\HomeController::class, 'visitor']);
 //Route::post('/contact', [Front\HomeController::class, 'subscribe'])->name('contact_subscribe');
 
 
-Route::get('/teacher', [Front\HomeController::class, 'teacher'])->name('teacher.home');
-//    ->middleware('isLogged');
+Route::get('/teacher', [Front\HomeController::class, 'teacher'])
+    ->name('teacher.home')
+    ->middleware('isLoggedTeacher');
 Route::post('/teacher', [Front\HomeController::class, 'postTeacher']);
 
 
@@ -66,14 +68,18 @@ Route::get('/search_exam', [Front\CourseController::class, 'search_exam']);
 
 // Admin
 
-Route::get('/admin_staff', [Front\AdminController::class, 'staff'])->name('admin.staff');
-//    ->middleware('isLoggedAdmin');
-Route::get('/admin_student', [Front\AdminController::class, 'student'])->name('admin.student')
+Route::get('/admin_staff', [Front\AdminController::class, 'staff'])
+    ->name('admin.staff')
+    ->middleware('isLoggedAdmin');
+Route::get('/admin_student', [Front\AdminController::class, 'student'])
+    ->name('admin.student')
     ->middleware('isLoggedAdmin');
 
-Route::get('/admin_grade', [Front\AdminController::class, 'grade'])->name('admin.grade')
+Route::get('/admin_grade', [Front\AdminController::class, 'grade'])
+    ->name('admin.grade')
     ->middleware('isLoggedAdmin');
-Route::get('/admin_counselor', [Front\AdminController::class, 'counselor'])->name('admin.counselor')
+Route::get('/admin_counselor', [Front\AdminController::class, 'counselor'])
+    ->name('admin.counselor')
     ->middleware('isLoggedAdmin');
 Route::get('/admin_addstudent', [Front\AdminController::class, 'addStudent']);
 Route::post('/admin_addstudent', [Front\AdminController::class, 'addStudent1'])->name('admin.addstudent');
@@ -86,7 +92,9 @@ Route::post('/admin_addcounselor', [Front\AdminController::class, 'addCounselor1
 
 // Counselor
 
-Route::get('/visitor', [Front\AdminController::class, 'visitor'])->name('counselor.home');
+Route::get('/visitor', [Front\AdminController::class, 'visitor'])
+    ->name('counselor.home')
+    ->middleware('isLoggedCounselor');
 
 //Phong
 
