@@ -213,7 +213,7 @@ class AdminController extends Controller
     }
 
 //phong
-    public function delete($rowId){
+    public function deleteStaff($rowId){
 
 
         Teacher::where('id', $rowId)->delete();
@@ -223,7 +223,7 @@ class AdminController extends Controller
         return back();
     }
 
-    public function delete1($rowId){
+    public function deleteCounselor($rowId){
 
 
         Counselor::where('id', $rowId)->delete();
@@ -233,7 +233,7 @@ class AdminController extends Controller
         return back();
     }
 
-    public function delete2($rowId){
+    public function deleteStudent($rowId){
 
 
         Student::where('id', $rowId)->delete();
@@ -243,4 +243,13 @@ class AdminController extends Controller
         return back();
     }
 
+    public function deleteClass($rowId){
+
+
+        Grade::where('id', $rowId)->delete();
+        Grade::where('id', $rowId)
+            ->update(['isDeleted' => 1]);
+
+        return back();
+    }
 }
