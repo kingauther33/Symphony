@@ -1,9 +1,9 @@
 @extends('front.layout.master')
 
 @section('title', 'entrance_exam')
-<link rel="stylesheet" href="front/OnlineEdu/css/entranceexam.css">
-@section('styles')
 
+@section('styles')
+    <link rel="stylesheet" href="front/OnlineEdu/css/entranceexam.css">
 @endsection
 
 @section('body')
