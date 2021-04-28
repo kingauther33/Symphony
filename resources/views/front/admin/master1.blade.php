@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="front/admin/css/bootstrap.min.css">
 
     <!-- Style -->
+{{--    <link rel="stylesheet" href="front/admin/css/dropdown.css">--}}
+
     <link rel="stylesheet" href="front/admin/css/1.css">
     <link rel="stylesheet" href="front/admin/css/style.css">
     <link rel="stylesheet" href="front/OnlineEdu/css/style.css">
@@ -56,8 +58,6 @@
         <form class="navbar-search pl-0 ml-auto mt-3 mb-2 mt-md-0 mb-md-0 mr-3" action="">
             <div class="input-group d-block d-md-flex mb-0">
                 <div class="input-group-prepend">
-                    <a href="#!" class="input-icon d-flex align-items-center" type="button"><i
-                            class="fas fa-search text-white mx-3"></i></a>
                 </div>
             </div>
         </form>
@@ -182,6 +182,11 @@
 
 <script src="front/OnlineEdu/js/plugins.js"></script>
 <script src="front/OnlineEdu/js/main.js"></script>
+
+<script src="front/counselor/js/jquery-3.3.1.min.js"></script>
+<script src="front/counselor/js/popper.min.js"></script>
+<script src="front/counselor/js/bootstrap.min.js"></script>
+<script src="front/counselor/js/main.js"></script>
 @yield('script')
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>

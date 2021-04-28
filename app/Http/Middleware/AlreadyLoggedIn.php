@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 
-class AuthCheck
+class AlreadyLoggedIn
 {
     /**
      * Handle an incoming request.
@@ -16,8 +16,8 @@ class AuthCheck
      */
     public function handle(Request $request, Closure $next)
     {
-        if(!session()->has('LoggedUser')) {
-            return redirect('login')->with('fail', 'You must log in');
+        if(session()->has('LoggedUser') && (url('login') == $request->url())) {
+            return back();
         }
 
         return $next($request);
