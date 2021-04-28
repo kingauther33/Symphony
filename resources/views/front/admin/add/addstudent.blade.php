@@ -99,11 +99,11 @@
 
                                 <div class="col-lg-6 p-t-20">
                                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width is-upgraded" data-upgraded=",MaterialTextField">
-                                        <input class="mdl-textfield__input" type="text" id="class" name="class id" >
+                                        <input class="mdl-textfield__input" type="text" id="class" name="grade id" >
                                         <label class="mdl-textfield__label">
                                             Class ID
                                         </label>
-                                        <span class="text-danger">@error('class id') {{ $message }} @enderror</span>
+                                        <span class="text-danger">@error('grade id') {{ $message }} @enderror</span>
                                     </div>
                                 </div>
 

@@ -36,11 +36,11 @@ class AdminController extends Controller
         return view('front.admin.student', compact('students'));
     }
 
-    public function class()
+    public function grade()
     {
         $grades = Grade::all();
 
-        return view('front.admin.class', compact('grades'));
+        return view('front.admin.grade', compact('grades'));
     }
 
     public function addStudent()
@@ -55,7 +55,7 @@ class AdminController extends Controller
            'last name'=>'required',
            'email'=>'required|email',
            'registration date'=>'date_format:Y-m-d|nullable',
-           'class id'=>'required|numeric',
+           'grade id'=>'required|numeric',
            'password'=>'required|min:6|max:14',
            'phone number'=>'required|regex:/(0)[0-9]{9}/',
            'birth date'=>'date_format:Y-m-d|before:today|nullable',
@@ -64,7 +64,7 @@ class AdminController extends Controller
         ]);
 
         $addstudent = new Student();
-        $addstudent->grade_id = $request->input('class id');
+        $addstudent->grade_id = $request->input('grade id');
         $addstudent->avatar = $request->avatar;
         $addstudent->email = $request->email;
         $addstudent->password = $request->password;
@@ -106,7 +106,7 @@ class AdminController extends Controller
 
         $addcourse->save();
 
-        return redirect('class')
+        return redirect('grade')
             ->with('message', '<div class="alert alert-success">Course Added Successfully!</div>');
     }
 
