@@ -72,7 +72,7 @@
                         <td>{{ $grade->teacher_id }}</td>
                         <td>{{ $grade->course_id }}</td>
                         <td>
-                            <span class="btn btn-sm btn-danger btn_row_delete"><i onclick="window.location='./admin_class/delete/{{ $grade->id }}'" class="fa fa-trash"></i></span>
+                            <span class="btn btn-sm btn-danger btn_row_delete"><i onclick="window.location='./admin_grade/delete/{{ $grade->id }}'" class="fa fa-trash"></i></span>
                         </td>
                     </tr>
                     <tr class="spacer"><td colspan="100"></td></tr>

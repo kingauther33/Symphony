@@ -117,7 +117,7 @@
                                     <li><a href="#">Admission Form</a></li>
                                 </ul>
                             </li>
-                            <li class="{{ (request()->segment(1) == 'class') ? 'active' : '' }}"><a href="admin_class">Classes</a>
+                            <li class="{{ (request()->segment(1) == 'class') ? 'active' : '' }}"><a href="admin_grade">Classes</a>
                                 <ul class="submenu">
                                     <li><a href="#">All Classes</a></li>
                                     <li><a href="#">Add New Class</a></li>
