@@ -10,7 +10,7 @@
             <input type="checkbox" id="profile2"><img src="https://mdbootstrap.com/img/Photos/Avatars/img (31).jpg" width="40px" height="40px"  class="rounded-circle z-depth-0"
                                                       alt="avatar image">
             {{--        {{ $LoggedUserInfo->fname }}--}}
-{{--            <span>{{ $LoggedUserInfo->fname }}</span>--}}
+            <span>{{ $LoggedUserInfo->lname }} {{ $LoggedUserInfo->fname }}</span>
             <label for="profile2"><i class="mdi mdi-menu"></i></label>
             <ul>
                 <li><a href="#"><i class="mdi mdi-email-outline"></i>Profile</a></li>
@@ -21,16 +21,6 @@
         </label>
     </div>
 </div>
-    <a class="nav-link dropdown-toggle"   id="navbarDropdownMenuLink-55" data-toggle="dropdown"
-       aria-haspopup="true" aria-expanded="false">
-        <img src="https://mdbootstrap.com/img/Photos/Avatars/img (31).jpg" width="40px" height="40px"  class="rounded-circle z-depth-0"
-             alt="avatar image">
-{{--        {{ $LoggedUserInfo->fname }}--}}
-    </a>
-    <ul class="dropdown-menu">
-        <li><a href="logout">Log out</a></li>
-        <li><a href="#">JS</a></li>
-        <li><a href="#">CSS</a></li>
 
 @endsection
 
@@ -82,7 +72,6 @@
           @endforeach
           </tbody>
         </table>
-
     </div>
 
   </div>

@@ -68,17 +68,17 @@ Route::get('/search_exam', [Front\CourseController::class, 'search_exam']);
 
 // Admin
 
-Route::get('/admin_staff', [Front\AdminController::class, 'staff'])
+Route::get('/admin_staff', [Front\AdminController::class, 'adminStaff'])
     ->name('admin.staff')
     ->middleware('isLoggedAdmin');
-Route::get('/admin_student', [Front\AdminController::class, 'student'])
+Route::get('/admin_student', [Front\AdminController::class, 'adminStudent'])
     ->name('admin.student')
     ->middleware('isLoggedAdmin');
 
-Route::get('/admin_grade', [Front\AdminController::class, 'grade'])
+Route::get('/admin_grade', [Front\AdminController::class, 'adminGrade'])
     ->name('admin.grade')
     ->middleware('isLoggedAdmin');
-Route::get('/admin_counselor', [Front\AdminController::class, 'counselor'])
+Route::get('/admin_counselor', [Front\AdminController::class, 'adminCounselor'])
     ->name('admin.counselor')
     ->middleware('isLoggedAdmin');
 Route::get('/admin_addstudent', [Front\AdminController::class, 'addStudent']);

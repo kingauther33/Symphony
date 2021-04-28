@@ -1,6 +1,6 @@
 @extends('front.profile.master2')
 
-@section('title', 'Student')
+@section('title', 'Student | Profile')
 
 @section('body')
     <div class="container emp-profile">
