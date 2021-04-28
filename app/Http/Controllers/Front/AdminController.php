@@ -156,7 +156,15 @@ class AdminController extends Controller
     public function counselor() {
         $counselors = Counselor::all();
 
-        return view('front.admin.counselor', compact('counselors'));
+        // Session when logged in
+        if (session()->has('LoggedUser')) {
+            $user = Counselor::where('id', '=', session('LoggedUser'))->first();
+            $data = [
+                'LoggedUserInfo' => $user
+            ];
+        }
+
+        return view('front.admin.counselor', compact('counselors'), $data);
     }
 
     public function addCounselor() {
@@ -235,11 +243,11 @@ class AdminController extends Controller
         return back();
     }
 
-    public function delete4($rowId)
+    public function deleteVisitor($rowId)
     {
 
         Visitor::where('id', $rowId)->delete();
-        DB::table('visitor')->where('id', $rowId)->update(['isDeleted' => 1]);
+        DB::table('visitors')->where('id', $rowId)->update(['isDeleted' => 1]);
 
         return back();
 

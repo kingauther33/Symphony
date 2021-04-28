@@ -30,7 +30,8 @@ Route::get('/instructor', [Front\HomeController::class, 'instructor']);
 /*Route::post('/contact', [Front\HomeController::class, 'subscribe']);*/
 Route::get('/login', [Front\UserAuthController::class, 'login'])->middleware('alreadyLoggedIn');
 Route::post('check', [Front\UserAuthController::class, 'check'])->name('admin.checklogin');
-Route::post('logout', [Front\UserAuthController::class, 'logout']);
+Route::get('logout', [Front\UserAuthController::class, 'logout']);
+Route::get('error', [Front\HomeController::class, 'error']);
 
 //Son
 
@@ -40,7 +41,6 @@ Route::post('/student_profile', [Front\StudentController::class, 'postProfile'])
 Route::post('/contact', [Front\HomeController::class, 'sendmail'])->name('contact_mail');
 Route::get('/counselor', [Front\HomeController::class, 'counselor'])->name('counselor.home')->middleware('isLogged');
 
-Route::post('/contact', [Front\HomeController::class, 'sendmail']);
 
 
 //Route::post('/contact', [Front\HomeController::class, 'subscribe'])->name('contact_subscribe');
@@ -100,7 +100,7 @@ Route::get('admin_student/delete/{rowId}', [Front\AdminController::class, 'delet
 
 Route::get('admin_grade/delete/{rowId}', [Front\AdminController::class, 'delete3']);
 
-Route::get('visitor/delete/{rowId}', [Front\AdminController::class, 'delete4']);
+Route::get('visitor/delete/{rowId}', [Front\AdminController::class, 'deleteVisitor']);
 
 
 Route::get('admin_student/delete/{rowId}', [Front\AdminController::class, 'deleteStudent']);

@@ -2,7 +2,7 @@
 
 namespace App\Http;
 
-use App\Http\Middleware\AuthCheck;
+use App\Http\Middleware\AuthCheckCounselor;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
 class Kernel extends HttpKernel
@@ -54,7 +54,7 @@ class Kernel extends HttpKernel
      * @var array
      */
     protected $routeMiddleware = [
-        'isLogged' => \App\Http\Middleware\AuthCheck::class,
+        'isLogged' => \App\Http\Middleware\AuthCheckCounselor::class,
         'alreadyLoggedIn' => \App\Http\Middleware\AlreadyLoggedIn::class,
         'auth' => \App\Http\Middleware\Authenticate::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
