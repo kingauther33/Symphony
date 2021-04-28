@@ -186,6 +186,7 @@ class AdminController extends Controller
             ->with('message', '<div class="alert alert-success">Counselor Added Successfully!</div>');;
     }
 
+
     public function visitor() {
         $visitors = Visitor::all();
 
@@ -216,4 +217,5 @@ class AdminController extends Controller
 
         return back();
     }
+
 }

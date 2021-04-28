@@ -1,5 +1,4 @@
-<!doctype html>
-<html lang="en">
+
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -25,7 +24,7 @@
 
 <nav class="navbar navbar-expand-md navbar-light">
 
-    <a style="padding-left: 50px" class="navbar-brand" href="#">
+    <a style="padding-left: 50px" class="navbar-brand" href="/">
         <img src="front/OnlineEdu/img/logo/logo.png"  alt="">
     </a>
 
@@ -36,28 +35,23 @@
     </button>
 
 
-
-    <!-- Links -->
     <div class="collapse navbar-collapse" id="basicExampleNav13">
-
-        <!-- Navbar -->
         <nav class="navbar navbar-expand-md navbar-light">
-
-            <!-- Links -->
             <div class="collapse navbar-collapse" id="basicExampleNav5">
-
-                <!-- Right -->
-                <ul class="navbar-nav nav-flex-icons ml-auto">
-                    <li class="nav-item avatar dropdown d-flex align-items-center">
-                        <a style="padding-left: 50.5rem;" class="nav-link dropdown-toggle"   id="navbarDropdownMenuLink-55" data-toggle="dropdown"
+                <ul  style="padding-left: 50.5rem;" class="navbar-nav nav-flex-icons ml-auto">
+                    <li  class="nav-item avatar dropdown d-flex align-items-center">
+                        <a  class="nav-link dropdown-toggle"   id="navbarDropdownMenuLink-55" data-toggle="dropdown"
                            aria-haspopup="true" aria-expanded="false">
                             <img src="https://mdbootstrap.com/img/Photos/Avatars/img (31).jpg" width="40px" height="40px"  class="rounded-circle z-depth-0"
                                  alt="avatar image">
                             Đinh Tiến An
                         </a>
-                        <div class="dropdown-menu dropdown-menu-lg-right" aria-labelledby="navbarDropdownMenuLink-55">
-                            <a class="dropdown-item" href="student_result">Profile</a>
-                        </div>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">HTML</a></li>
+                            <li><a href="#">CSS</a></li>
+                            <li><a href="#">JavaScript</a></li>
+                        </ul>
+
                     </li>
                 </ul>
 
@@ -72,5 +66,9 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="front/counselor/js/jquery-3.3.1.min.js"></script>
+<script src="front/counselor/js/popper.min.js"></script>
+<script src="front/counselor/js/bootstrap.min.js"></script>
+<script src="front/counselor/js/main.js"></script>
 </body>
 </html>

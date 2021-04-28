@@ -9,10 +9,7 @@
                 <div class="col-md-4">
                     <div class="profile-img">
                         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52y5aInsxSm31CvHOFHWujqUx_wWTS9iM6s7BAm21oEN_RiGoog" alt=""/>
-                        <div class="file btn btn-lg btn-primary">
-                            Change Photo
-                            <input type="file" name="file"/>
-                        </div>
+
                     </div>
                 </div>
                 <div class="col-md-6">
@@ -28,21 +25,19 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-md-2">
-                    <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile"/>
-                </div>
             </div>
             <div class="row">
                 <div class="col-md-4"></div>
                 <div class="col-md-8">
                     <div class="tab-content profile-tab" id="myTabContent">
                         <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                            @foreach($profiles as $profile)
                             <div class="row">
                                 <div class="col-md-6">
                                     <label>ID</label>
                                 </div>
                                 <div class="col-md-6">
-                                    <p>0000</p>
+                                    <p></p>
                                 </div>
                             </div>
                             <div class="row">
@@ -50,7 +45,7 @@
                                     <label>Name</label>
                                 </div>
                                 <div class="col-md-6">
-                                    <p>Đinh Tiến An</p>
+                                    <p>{{$profile->fname}}</p>
                                 </div>
                             </div>
                             <div class="row">
@@ -85,7 +80,9 @@
                                     <p>06/12/2019</p>
                                 </div>
                             </div>
+                            @endforeach
                         </div>
+                   </div>
                 </div>
             </div>
         </form>

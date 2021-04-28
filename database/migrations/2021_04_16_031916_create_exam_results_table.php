@@ -21,10 +21,10 @@ class CreateExamResultsTable extends Migration
 
 
             $table->integer('mark')->unsigned();
+
             $table->timestamps();
             $table->softDeletes();
 
-            $table->timestamps();
         });
     }
 
