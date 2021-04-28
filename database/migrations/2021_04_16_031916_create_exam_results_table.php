@@ -19,9 +19,12 @@ class CreateExamResultsTable extends Migration
             $table->integer('student_id')->unsigned();
             $table->integer('exam_id')->unsigned();
 
+
             $table->integer('mark')->unsigned();
 
             $table->timestamps();
+            $table->softDeletes();
+
         });
     }
 

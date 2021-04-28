@@ -24,6 +24,7 @@ class CreateCounselorsTable extends Migration
             $table->string('phone');
 
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

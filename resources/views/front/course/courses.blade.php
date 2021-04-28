@@ -96,7 +96,7 @@
                                                                                 <span aria-hidden="true">&times;</span>
                                                                             </button>
                                                                         </div>
-                                                                        <form action="courses" method="post">
+                                                                        <form action="courses" method="post" onsubmit="show_alert()">
                                                                             @csrf
                                                                             <div class="modal-body">
                                                                                 <div class="form-group">
@@ -106,12 +106,7 @@
                                                                                            class="form-control"
                                                                                            name="email"
                                                                                            aria-describedby="emailHelp"
-                                                                                           placeholder="Enter Email">
-                                                                                    <span class="text-danger">
-                                                                                        @error('email')
-                                                                                            <script type='text/javascript'>alert('wrong try again!!');</script>
-                                                                                        @enderror
-                                                                                    </span>
+                                                                                           placeholder="Enter Email" required="required">
                                                                                 </div>
                                                                                 <div class="form-group">
                                                                                     <label for="exampleInput">
@@ -119,12 +114,10 @@
                                                                                     <input type="number"
                                                                                            class="form-control"
                                                                                            name="course_id"
-                                                                                           placeholder="Enter number course[1-3]">
-                                                                                    <span class="text-danger">
-                                                                                        @error('course_id')
-                                                                                            <script type='text/javascript'>alert('wrong try again!!');</script>
-                                                                                        @enderror
-                                                                                    </span>
+                                                                                           placeholder="Enter number course[1 or 2 or 3]"
+                                                                                           min="1"
+                                                                                           max="3"
+                                                                                           required>
                                                                                 </div>
                                                                                 <div class="form-group">
                                                                                     <label for="exampleInput">
@@ -147,12 +140,18 @@
                                                                                 <div class="form-group">
                                                                                     <label for="exampleInput">
                                                                                         Phone</label>
-                                                                                    <input type="number"
+                                                                                    <input type="text"
                                                                                            class="form-control"
                                                                                            id="phone"
                                                                                            name="phone"
+                                                                                           data-validation="number"
+                                                                                           data-validation-allowing="negative,number" input name="color"
+                                                                                           data-validation="number" datavalidation-ignore="$"
                                                                                            placeholder="Enter Phone"
-                                                                                           required>
+                                                                                           maxlength="10"
+                                                                                           minlength="10"
+                                                                                           pattern="\d*"
+                                                                                           required = "required">
                                                                                 </div>
                                                                                 <div class="form-group">
                                                                                     <label for="exampleInput">
@@ -172,7 +171,6 @@
                                                                                 </button>
                                                                                 <button type="submit"
                                                                                         class="btn btn-primary"
-
                                                                                 >Submit
                                                                                 </button>
                                                                             </div>
@@ -270,6 +268,13 @@
         </section>
 
     </main>
+    @section('scripts')
+    <script>
+        function show_alert() {
+            alert("Đăng ký thành công! Vui lòng chờ phản hồi!")
+        }
+    </script>
+    @endsection
 @endsection
 
 {{--@section('scripts')--}}

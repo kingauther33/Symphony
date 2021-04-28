@@ -30,6 +30,7 @@ class CreateTeachersTable extends Migration
             $table->string('last_login_ip');
 
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
