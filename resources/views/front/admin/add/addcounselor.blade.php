@@ -2,9 +2,13 @@
 
 @section('title', 'Add Counselor')
 
+@section('style')
+    <link rel="stylesheet" href="front/admin/css/dropdown.css">
+@endsection
+
 @section('account')
 
-    <a style="padding-left: 50.5rem;" class="nav-link dropdown-toggle"   id="navbarDropdownMenuLink-55" data-toggle="dropdown"
+    <a class="nav-link dropdown-toggle"   id="navbarDropdownMenuLink-55" data-toggle="dropdown"
        aria-haspopup="true" aria-expanded="false">
         <img src="https://mdbootstrap.com/img/Photos/Avatars/img (31).jpg" width="40px" height="40px"  class="rounded-circle z-depth-0"
              alt="avatar image">
@@ -183,10 +187,15 @@
         <link rel="stylesheet" href="public/front/admin/css/1.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+
     @endsection
 
     @section('script')
         <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+        <script src="front/admin/js/jquery-3.3.1.min.js"></script>
+        <script src="front/admin/js/popper.min.js"></script>
+        <script src="front/admin/js/bootstrap.min.js"></script>
+        <script src="front/admin/js/main.js"></script>
     @endsection
 
 @endsection
