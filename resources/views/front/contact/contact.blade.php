@@ -485,7 +485,7 @@
                                 </div>--}}
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        <input class="form-control valid" name="first name" type="text"
+                                        <input class="form-control valid" name="fname" type="text"
                                                placeholder="Enter your first name">
                                         <span class="text-danger">@error('first name') {{ $message }} @enderror</span>
                                     </div>
