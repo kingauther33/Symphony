@@ -1,4 +1,4 @@
-@extends('front.admin.master1')
+@extends('front.layout.master_back')
 
 @section('title', 'Add Professor')
 

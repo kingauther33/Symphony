@@ -1,4 +1,4 @@
-@extends('front.layout.master')
+@extends('front.layout.master_front')
 
 @section('title', 'Contact')
 

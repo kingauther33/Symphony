@@ -1,4 +1,4 @@
-@extends('front.profile.master2')
+@extends('front.layout.master_back')
 
 @section('title', 'Training_departments | Profile')
 

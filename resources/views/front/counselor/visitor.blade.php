@@ -1,4 +1,4 @@
-@extends('front.counselor.master_counselor')
+@extends('front.layout.master_back')
 
 @section('title', 'Visitor')
 
@@ -9,8 +9,7 @@
                                                       width="40px" height="40px" class="rounded-circle z-depth-0"
                                                       alt="avatar image">
             {{--        {{ $LoggedUserInfo->fname }}--}}
-            {{--            <span>{{ $LoggedUserInfo->fname }}</span>--}}
-            <span>Dinh Tien An</span>
+                        <span>{{ $LoggedUserInfo->lname }} {{ $LoggedUserInfo->fname }}</span>
             <label for="profile2"><i class="mdi mdi-menu"></i></label>
             <ul>
                 <li><a href="#"><i class="mdi mdi-email-outline"></i>Profile</a></li>
