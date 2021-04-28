@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="front/admin/css/bootstrap.min.css">
 
     <!-- Style -->
+{{--    <link rel="stylesheet" href="front/admin/css/dropdown.css">--}}
+    
     <link rel="stylesheet" href="front/admin/css/1.css">
     <link rel="stylesheet" href="front/admin/css/style.css">
     <link rel="stylesheet" href="front/OnlineEdu/css/style.css">
@@ -72,7 +74,7 @@
 
                     <!-- Right -->
                     <ul class="navbar-nav nav-flex-icons ml-auto">
-                        <li class="nav-item avatar dropdown d-flex align-items-center">
+                        <li class="nav-item avatar dropdown d-flex align-items-center open">
                             @yield('account')
                         </li>
                     </ul>

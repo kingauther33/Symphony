@@ -22,6 +22,7 @@ class CreateGradesTable extends Migration
             $table->year('year');
             $table->string('name');
             $table->string('description');
+            $table->integer('isDeleted')->default(0);
 
             $table->timestamps();
             $table->softDeletes();

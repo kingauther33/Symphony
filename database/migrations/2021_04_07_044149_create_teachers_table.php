@@ -28,6 +28,7 @@ class CreateTeachersTable extends Migration
             $table->string('comment', 1000)->nullable();
             $table->date('last_login_date');
             $table->string('last_login_ip');
+            $table->integer('isDeleted')->default(0);
 
             $table->timestamps();
             $table->softDeletes();
