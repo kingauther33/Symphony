@@ -57,11 +57,6 @@
         <form class="navbar-search pl-0 ml-auto mt-3 mb-2 mt-md-0 mb-md-0 mr-3" action="">
             <div class="input-group d-block d-md-flex mb-0">
                 <div class="input-group-prepend">
-                    <a href="#!" class="input-icon d-flex align-items-center" type="button"><i
-                            class="fas fa-search text-white mx-3"></i></a>
-                    <input class="form-control white-text rgba-black-light border-0 z-depth-0 pl-5" type="text"
-                           placeholder="Search" aria-label="Search">
-                </div>
             </div>
         </form>
 

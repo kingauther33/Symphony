@@ -90,7 +90,11 @@ class HomeController extends Controller
 
     public function sendmail(Request $request){
         Mail::send('front.email.email',[
+
             'fname' => $request-> fname,
+
+            'fname' => $request->fname,
+
 
         ],function ($mail) use ($request){
             $mail->to('riven1707@gmail.com');

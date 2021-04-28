@@ -4,7 +4,7 @@
 
 @section('account')
 
-    <a style="padding-left: 50.5rem;" class="nav-link dropdown-toggle"   id="navbarDropdownMenuLink-55" data-toggle="dropdown"
+    <a class="nav-link dropdown-toggle"   id="navbarDropdownMenuLink-55" data-toggle="dropdown"
        aria-haspopup="true" aria-expanded="false">
         <img src="https://mdbootstrap.com/img/Photos/Avatars/img (31).jpg" width="40px" height="40px"  class="rounded-circle z-depth-0"
              alt="avatar image">
@@ -72,7 +72,7 @@
                         <td>{{ $grade->teacher_id }}</td>
                         <td>{{ $grade->course_id }}</td>
                         <td>
-                            <span class="btn btn-sm btn-danger btn_row_delete"><i class="fa fa-trash"></i></span>
+                            <span class="btn btn-sm btn-danger btn_row_delete"><i onclick="window.location='./admin_class/delete/{{ $grade->id }}'" class="fa fa-trash"></i></span>
                         </td>
                     </tr>
                     <tr class="spacer"><td colspan="100"></td></tr>
