@@ -473,7 +473,7 @@
                         <h2 class="contact-title">Get in Touch</h2>
                     </div>
                     <div class="col-lg-8">
-                        <form class="form-contact contact_form" action="{{ route('contact_subscribe') }}" method="post">
+                        <form class="form-contact contact_form" action="{{ route('contact_mail') }}" method="post">
                             @csrf
 
                             <div class="row">
@@ -487,14 +487,14 @@
                                     <div class="form-group">
                                         <input class="form-control valid" name="fname" type="text"
                                                placeholder="Enter your first name">
-                                        <span class="text-danger">@error('first name') {{ $message }} @enderror</span>
+                                        <span class="text-danger">@error('fname') {{ $message }} @enderror</span>
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        <input class="form-control valid" name="last name" type="text"
+                                        <input class="form-control valid" name="lname" type="text"
                                                placeholder="Enter your last name">
-                                        <span class="text-danger">@error('last name') {{ $message }} @enderror</span>
+                                        <span class="text-danger">@error('lname') {{ $message }} @enderror</span>
                                     </div>
                                 </div>
 
@@ -509,7 +509,7 @@
 
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        <input class="form-control valid" type="tel" id="phone" name="phone number"
+                                        <input class="form-control valid" type="text" id="phone" name="phone number"
                                                placeholder="Phone Number">
                                         <span class="text-danger">@error('phone number') {{ $message }} @enderror</span>
                                     </div>

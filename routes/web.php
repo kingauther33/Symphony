@@ -27,7 +27,7 @@ Route::get('/', [Front\HomeController::class, 'index']);
 Route::get('/about', [Front\CourseController::class, 'about']);
 Route::get('/contact', [Front\CourseController::class, 'contact']);
 Route::get('/instructor', [Front\HomeController::class, 'instructor']);
-Route::post('/contact', [Front\HomeController::class, 'subscribe']);
+/*Route::post('/contact', [Front\HomeController::class, 'subscribe']);*/
 Route::get('/login', [Front\UserAuthController::class, 'login'])->middleware('alreadyLoggedIn');
 Route::post('check', [Front\UserAuthController::class, 'check'])->name('admin.checklogin');
 Route::post('logout', [Front\UserAuthController::class, 'logout']);
@@ -43,7 +43,7 @@ Route::get('/counselor',[Front\HomeController::class,'counselor'])->name('counse
 Route::post('/contact', [Front\HomeController::class, 'sendmail']);
 
 
-Route::post('/contact', [Front\HomeController::class, 'subscribe'])->name('contact_subscribe');
+//Route::post('/contact', [Front\HomeController::class, 'subscribe'])->name('contact_subscribe');
 
 Route::get('/counselor',[Front\HomeController::class,'counselor']);
 
