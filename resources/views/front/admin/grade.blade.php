@@ -1,6 +1,6 @@
 @extends('front.layout.master_back')
 
-@section('title', 'Classes')
+@section('title', 'Training Department | Grades')
 
 @section('account')
 
