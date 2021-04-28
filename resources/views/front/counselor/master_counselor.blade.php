@@ -71,15 +71,17 @@
                     <!-- Right -->
                     <ul class="navbar-nav nav-flex-icons ml-auto">
                         <li class="nav-item avatar dropdown d-flex align-items-center">
-                            <a style="padding-left: 50.5rem;" class="nav-link dropdown-toggle"   id="navbarDropdownMenuLink-55" data-toggle="dropdown"
+                            <a class="nav-link dropdown-toggle"   id="navbarDropdownMenuLink-55" data-toggle="dropdown"
                                aria-haspopup="true" aria-expanded="false">
                                 <img src="https://mdbootstrap.com/img/Photos/Avatars/img (31).jpg" width="40px" height="40px"  class="rounded-circle z-depth-0"
                                      alt="avatar image">
                                 Đinh Tiến An
                             </a>
-                            <div class="dropdown-menu dropdown-menu-lg-right" aria-labelledby="navbarDropdownMenuLink-55">
-                                <a class="dropdown-item" href="student_result">Profile</a>
-                            </div>
+                            <ul class="dropdown-menu">
+                                <li href="#">HTML</li>
+                                <li href="#">JS</li>
+                                <li href="#">CSS</li>
+                            </ul>
                         </li>
                     </ul>
 
@@ -161,6 +163,11 @@
 
 <script src="front/OnlineEdu/js/plugins.js"></script>
 <script src="front/OnlineEdu/js/main.js"></script>
+
+<script src="front/admin/js/jquery-3.3.1.min.js"></script>
+<script src="front/admin/js/popper.min.js"></script>
+<script src="front/admin/js/bootstrap.min.js"></script>
+<script src="front/admin/js/main.js"></script>
 @yield('script')
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>

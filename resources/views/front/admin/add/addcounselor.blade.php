@@ -2,9 +2,6 @@
 
 @section('title', 'Add Counselor')
 
-@section('style')
-    <link rel="stylesheet" href="front/admin/css/dropdown.css">
-@endsection
 
 @section('account')
 
@@ -14,7 +11,7 @@
              alt="avatar image">
         Đinh Tiến An
     </a>
-    <ul class="dropdown-menu">
+    <ul class="dropdown-menu ">
         <li href="#">HTML</li>
         <li href="#">JS</li>
         <li href="#">CSS</li>
