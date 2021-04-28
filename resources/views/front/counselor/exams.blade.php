@@ -30,7 +30,7 @@
 @endsection
 
 @section('body')
-    <div class="content">
+    <div class="content pt-0">
         <div class="container">
             <h2 class="mb-3 mt-4">Exams</h2>
             <div class="row">
@@ -74,7 +74,7 @@
                             </td>
                             <td>{{ $exam->start_date }}</td>
                             <td>
-                                <span class="btn btn-sm btn-danger btn_row_delete"><i  onclick="window.location='./admin_staff/delete/{{ $exam->id }}'" class="fa fa-trash"></i></span>
+                                <span class="btn btn-sm btn-danger btn_row_delete"><i  onclick="window.location='./exams/delete/{{ $exam->id }}'" class="fa fa-trash"></i></span>
                             </td>
                         </tr>
                         <tr class="spacer"><td colspan="100"></td></tr>

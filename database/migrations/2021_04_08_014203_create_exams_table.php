@@ -24,6 +24,7 @@ class CreateExamsTable extends Migration
 
             $table->text('name');
             $table->date('start_date');
+            $table->integer('isDeleted')->default(0);
 
             $table->timestamps();
             $table->softDeletes();

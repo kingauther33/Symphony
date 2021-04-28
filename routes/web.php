@@ -44,9 +44,9 @@ Route::post('/contact', [Front\HomeController::class, 'sendmail'])->name('contac
 Route::get('/counselor', [Front\HomeController::class, 'counselor'])->name('counselor.home')->middleware('isLogged');
 
 
-Route::get('/exams',[Front\StudentController::class,'exams']);
+Route::get('/exams',[Front\StudentController::class,'exams'])->middleware('isLoggedCounselor');
 
-Route::post('/exams',[Front\StudentController::class,'PostExams']);
+Route::post('/exams',[Front\StudentController::class,'PostExams'])->middleware('isLoggedCounselor');
 
 Route::get('exams/delete/{rowId}', [Front\StudentController::class, 'deleteExams']);
 

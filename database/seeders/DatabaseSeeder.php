@@ -189,6 +189,7 @@ class DatabaseSeeder extends Seeder
 //                'phone' => $numberPrefixes[array_rand($numberPrefixes)] . $this->randomNumberSequence()
 //            ],
             [
+                'avatar' => 'avatar-1.png',
                 'fname' => $faker->firstName(),
                 'lname' => $faker->lastName(),
 //                'email' => $faker->email(),
@@ -198,6 +199,7 @@ class DatabaseSeeder extends Seeder
                 'user_id' => 1
             ],
             [
+                'avatar' => 'avatar-2.png',
                 'fname' => $faker->firstName(),
                 'lname' => $faker->lastName(),
 //                'email' => $faker->email(),
@@ -207,6 +209,7 @@ class DatabaseSeeder extends Seeder
                 'user_id' => 2
             ],
             [
+                'avatar' => 'avatar-3.png',
                 'fname' => $faker->firstName(),
                 'lname' => $faker->lastName(),
 //                'email' => $faker->email(),
@@ -216,6 +219,7 @@ class DatabaseSeeder extends Seeder
                 'user_id' => 3
             ],
             [
+                'avatar' => 'avatar-1.png',
                 'fname' => $faker->firstName(),
                 'lname' => $faker->lastName(),
 //                'email' => $faker->email(),
@@ -225,6 +229,7 @@ class DatabaseSeeder extends Seeder
                 'user_id' => 4
             ],
             [
+                'avatar' => 'avatar-1.png',
                 'fname' => $faker->firstName(),
                 'lname' => $faker->lastName(),
 //                'email' => $faker->email(),
@@ -234,6 +239,7 @@ class DatabaseSeeder extends Seeder
                 'user_id' => 5
             ],
             [
+                'avatar' => 'avatar-1.png',
                 'fname' => $faker->firstName(),
                 'lname' => $faker->lastName(),
 //                'email' => $faker->email(),
@@ -243,6 +249,7 @@ class DatabaseSeeder extends Seeder
                 'user_id' => 6
             ],
             [
+                'avatar' => 'avatar-1.png',
                 'fname' => $faker->firstName(),
                 'lname' => $faker->lastName(),
 //                'email' => $faker->email(),
@@ -252,6 +259,7 @@ class DatabaseSeeder extends Seeder
                 'user_id' => 7
             ],
             [
+                'avatar' => 'avatar-1.png',
                 'fname' => $faker->firstName(),
                 'lname' => $faker->lastName(),
 //                'email' => $faker->email(),

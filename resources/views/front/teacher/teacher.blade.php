@@ -30,10 +30,10 @@
 
         <label for="cars">Choose a class:</label>
         <select name="sort_by" id="class" class="sorting" onchange="this.from.submit();">
-            <option value="T2019M">T2019M</option>
-            <option value="T2020N">T2020N</option>
-            <option value="T2019A">T2019A</option>
-            <option value="T2019A">T2019A</option>
+            <option value="T2019M" name="T2019M">T2019M</option>
+            <option value="T2020N" name="T2020N">T2020N</option>
+            <option value="T2019A" name="T2019A">T2019A</option>
+            <option value="T2019A" name="T2019A">T2019A</option>
         </select>
     </form>
     <div class="container">

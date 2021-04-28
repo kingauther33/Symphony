@@ -3,11 +3,11 @@
 namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
+use App\Models\Counselor;
 use App\Models\Student;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use App\Models\Exam;
-use App\Models;
 use Illuminate\Support\Facades\DB;
 
 class StudentController extends Controller
@@ -31,7 +31,14 @@ class StudentController extends Controller
     public function exams(){
         $exams = Exam::all();
 
-        return view('front.counselor.exams',compact('exams'));
+        if (session()->has('LoggedUser')) {
+            $user = Counselor::where('user_id', session('LoggedUser'))->first();
+            $data = [
+                'LoggedUserInfo' => $user
+            ];
+        }
+
+        return view('front.counselor.exams',compact('exams'), $data);
     }
     public function PostExams(Request $request){
 
@@ -43,8 +50,8 @@ class StudentController extends Controller
     }
     public function deleteExams($rowId){
        Exam::where('id', $rowId)->delete();
-        DB::table('exams')->where('id', $rowId)->update(['isDeleted' => 1]);
+       DB::table('exams')->where('id', $rowId)->update(['isDeleted' => 1]);
 
-        return back();
+       return back();
     }
 }
