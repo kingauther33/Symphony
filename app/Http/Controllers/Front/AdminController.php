@@ -239,6 +239,14 @@ class AdminController extends Controller
     {
 
         Visitor::where('id', $rowId)->delete();
+        DB::table('visitor')->where('id', $rowId)->update(['isDeleted' => 1]);
+
+        return back();
+
+    }
+
+    public function deleteClass($rowId){
+
 
         return back();
     }
