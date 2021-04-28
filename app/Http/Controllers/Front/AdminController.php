@@ -252,11 +252,12 @@ class AdminController extends Controller
         return back();
     }
 
-    public function delete4($rowId){
+    public function delete4($rowId)
+    {
 
 
         Visitor::where('id', $rowId)->delete();
-
+    }
     public function deleteClass($rowId){
 
 
