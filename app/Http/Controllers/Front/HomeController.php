@@ -3,8 +3,11 @@
 namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
+use App\Models\Counselor;
+use App\Models\Student;
 use App\Models\Teacher;
 use App\Models\Visitor;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use Mail;
 
@@ -61,10 +64,30 @@ class HomeController extends Controller
     {
         return view('front.admin.add.addcourse');
     }
+    public function teacher(){
+        $teacher = Student::all();
+        return view('front.teacher.teacher',compact('teacher'));
+
+    }
+
+    public function postTeacher(Request $request){
+        $teacher = new Teacher();
+
+        $teacher->id = $request->id;
+        $teacher->fname = $request->fname;
+        $teacher->lname = $request->lname;
+        $teacher->email = $request->email;
+        $teacher->phone = $request->phone;
+        $teacher->status = $request->status;
+
+        $teacher->save();
+
+    }
 
     public function counselor()
     {
-        return view('front.counselor.counselor');
+        $counselors = Visitor::all();
+        return view('front.counselor.counselor',compact('counselors'));
     }
 
     public function addProfessor()
@@ -96,5 +119,18 @@ class HomeController extends Controller
 
         });
         return "success";
+    }
+    public function postCounselor(Request  $request){
+
+        $counselors = new Counselor();
+        $counselors->fname = $request->fname;
+        $counselors->lname = $request->lname;
+        $counselors->email = $request->email;
+        $counselors->password = $request->password;
+        $counselors->dob = $request->dob;
+        $counselors->phone = $request->phone;
+
+        $counselors->save();
+
     }
 }

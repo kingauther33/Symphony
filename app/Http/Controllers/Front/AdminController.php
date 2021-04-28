@@ -185,7 +185,5 @@ class AdminController extends Controller
             ->with('message', '<div class="alert alert-success">Counselor Added Successfully!</div>');;
     }
 
-    public function sssss() {
-        return view('front.profile.students');
-    }
+
 }
