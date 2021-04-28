@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
 use App\Models\Counselor;
+use App\Models\Grade;
 use App\Models\Student;
 use App\Models\Teacher;
 use App\Models\Visitor;
@@ -52,6 +53,13 @@ class HomeController extends Controller
         $teacher->status = $request->status;
 
         $teacher->save();
+
+        $class = new Grade();
+
+        $class->name = $request->name;
+        $class->year = $request->year;
+
+        $class->save();
 
     }
 

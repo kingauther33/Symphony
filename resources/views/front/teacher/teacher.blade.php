@@ -9,17 +9,17 @@
     <form action="/action_page.php" style="padding-left: 78px">
 
         <label for="cars">Choose a class:</label>
-        <select name="class" id="class">
-            <option value="t2004m">T2004M</option>
-            <option value="t2013m">T2103M</option>
-            <option value="t3333a">T3333A</option>
+        <select name="sort_by" id="class" class="sorting" onchange="this.from.submit();">
+            <option value="T2019M">T2019M</option>
+            <option value="T2020N">T2020N</option>
+            <option value="T2019A">T2019A</option>
+            <option value="T2019A">T2019A</option>
         </select>
-
     </form>
     <div class="container">
         <table class="table-teacher" style="width:100%">
             <tr>
-                <th class="th-teacher">Name Class: T2004M</th>
+                <th class="th-teacher">Name Class: </th>
                 <th class="th-teacher">Total student: 20 </th>
                 <th class="th-teacher">Course Name: Java </th>
                 <th class="th-teacher">Year: 1/1/2019</th>

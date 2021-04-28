@@ -11,7 +11,10 @@ Homestead.json
 Homestead.yaml
 npm-debug.log
 yarn-error.log
-*.xml
-*.xml
-*.iml
-*.iml
+.idea/php.xml
+.idea/Symphony.iml
+.idea/php.xml
+.idea/Symphony.iml
+.idea/modules.xml
+.idea/php.xml
+.idea/php.xml
