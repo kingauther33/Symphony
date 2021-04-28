@@ -59,7 +59,7 @@
 {{--                        </th>--}}
 
                         <th scope="col">Name</th>
-                        <th scope="col">Department</th>
+                        <th scope="col">Specialty</th>
                         <th scope="col">Mobile</th>
                         <th scope="col">Email</th>
                         <th scope="col">Address</th>
@@ -82,7 +82,7 @@
                             {{ $professor->specialty }}
                         </td>
                         <td>{{ $professor->phone }}</td>
-                        <td>{{ $professor->email }}</td>
+                        <td>{{ $UsersInDatabase->where('id', $professor->user_id)->first()->email }}</td>
                         <td>{{ $professor->address }}</td>
                         <td>
 {{--                            <span class="btn btn-sm btn-danger btn_row_edit" style="background: #17a2b8; border-color: #17a2b8"><i class="fa fa-edit"></i></span>--}}

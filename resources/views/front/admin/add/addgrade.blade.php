@@ -1,6 +1,6 @@
 @extends('front.layout.master_back')
 
-@section('title', 'Add Course')
+@section('title', 'Add Grade')
 
 @section('account')
 
@@ -31,57 +31,45 @@
 
 
 @section('body')
-    <div class="content mt-80">
+    <div class="content pt-30">
         <div class="container">
             <div class="card-box">
                 <div class="card-header">
                     <header>
-                        <h4>Course Details</h4>
+                        <h4>Grade Details</h4>
                     </header>
                 </div>
 
-                <form action="{{ route('admin.addcourse') }}" method="post">
+                <form action="{{ route('admin.addgrade') }}" method="post">
                     @csrf
 
                     <div class="card-body row">
 
                         <div class="col-lg-6 p-t-20">
                             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width is-upgraded" data-upgraded=",MaterialTextField">
-                                <input class="mdl-textfield__input" type="text" id="txtCourseName" name="course name" >
-                                <label class="mdl-textfield__label">
-                                    Course Name
-                                </label>
-                                <span class="text-danger">@error('course name') {{ $message }} @enderror</span>
+                                <input class="mdl-textfield__input" type="text" id="txtCourseName" name="course_name" placeholder="Course Name">
+                                <span class="text-danger">@error('course_name') {{ $message }} @enderror</span>
                             </div>
                         </div>
 
                         <div class="col-lg-6 p-t-20">
                             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width is-upgraded" data-upgraded=",MaterialTextField">
-                                <input class="mdl-textfield__input" type="text" id="txtCourseCode" name="course id" >
-                                <label class="mdl-textfield__label">
-                                    Course Code
-                                </label>
-                                <span class="text-danger">@error('course id') {{ $message }} @enderror</span>
+                                <input class="mdl-textfield__input" type="text" id="txtCourseCode" name="course_id" placeholder="Course Code">
+                                <span class="text-danger">@error('course_id') {{ $message }} @enderror</span>
                             </div>
                         </div>
 
-                        <div class="col-lg-12 p-t-20">
+                        <div class="col-lg-6 p-t-20">
                             <div class="mdl-textfield mdl-js-textfield txt-full-width is-upgraded" data-upgraded=",MaterialTextField">
-                                <textarea class="mdl-textfield__input" rows="4" id="text7" name="course details" ></textarea>
-                                <label class="mdl-textfield__label" for="text7">
-                                    Course Details
-                                </label>
-                                <span class="text-danger">@error('course details') {{ $message }} @enderror</span>
+                                <input class="mdl-textfield__input" rows="4" id="text7" name="course_details" placeholder="Course Details"/>
+                                <span class="text-danger">@error('course_details') {{ $message }} @enderror</span>
                             </div>
                         </div>
 
                         <div class="col-lg-6 p-t-20">
                             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width is-upgraded" data-upgraded=",MaterialTextField">
-                                <input class="mdl-textfield__input flatpickr-input" type="text" id="date" name="starting year" >
-                                <label class="mdl-textfield__label">
-                                    Start From
-                                </label>
-                                <span class="text-danger">@error('starting year') {{ $message }} @enderror</span>
+                                <input class="mdl-textfield__input flatpickr-input" type="text" id="date" name="starting_year" placeholder="Start From">
+                                <span class="text-danger">@error('starting_year') {{ $message }} @enderror</span>
                             </div>
                         </div>
 
@@ -105,11 +93,8 @@
 
                         <div class="col-lg-6 p-t-20">
                             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width is-upgraded" data-upgraded=",MaterialTextField">
-                                <input class="mdl-textfield__input" type="text" id="txtProf" name="professor id" >
-                                <label class="mdl-textfield__label">
-                                    Professor ID
-                                </label>
-                                <span class="text-danger">@error('professor id') {{ $message }} @enderror</span>
+                                <input class="mdl-textfield__input" type="text" id="txtProf" name="professor_id" placeholder="Professor ID">
+                                <span class="text-danger">@error('professor_id') {{ $message }} @enderror</span>
                             </div>
                         </div>
 

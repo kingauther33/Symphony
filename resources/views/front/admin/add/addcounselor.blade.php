@@ -30,7 +30,7 @@
 @endsection
 
 @section('body')
-    <div class="content mt-80">
+    <div class="content pt-30">
         <div class="container">
             <div class="card-box">
                 <div class="card-header">
@@ -44,22 +44,16 @@
                     <div class="card-body row">
 
                         <div class="col-lg-6 p-t-20">
-                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width is-upgraded" data-upgraded=",MaterialTextField">
-                                <input class="mdl-textfield__input" type="text" id="txtFirstName" name="first name" >
-                                <label class="mdl-textfield__label">
-                                    First Name
-                                </label>
-                                <span class="text-danger">@error('first name') {{ $message }} @enderror</span>
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width is-upgraded">
+                                <input class="mdl-textfield__input" type="text" name="firstname" value="{{ old('firstname') }}" placeholder="First Name">
+                                <span class="text-danger">@error('firstname') {{ $message }} @enderror</span>
                             </div>
                         </div>
 
                         <div class="col-lg-6 p-t-20">
                             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width is-upgraded" data-upgraded=",MaterialTextField">
-                                <input class="mdl-textfield__input" type="text" id="txtLastName" name="last name" >
-                                <label class="mdl-textfield__label">
-                                    Last Name
-                                </label>
-                                <span class="text-danger">@error('last name') {{ $message }} @enderror</span>
+                                <input class="mdl-textfield__input" type="text" id="txtLastName" name="lastname" value="{{ old('lastname') }}" placeholder="Last Name">
+                                <span class="text-danger">@error('lastname') {{ $message }} @enderror</span>
                             </div>
                         </div>
 
@@ -74,10 +68,7 @@
 
                         <div class="col-lg-6 p-t-20">
                             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width is-upgraded" data-upgraded=",MaterialTextField">
-                                <input class="mdl-textfield__input" type="text" id="txtemail" name="email" >
-                                <label class="mdl-textfield__label">
-                                    Email
-                                </label>
+                                <input class="mdl-textfield__input" type="text" id="txtemail" name="email" value="{{ old('email') }}" placeholder="Email">
                                 <span class="text-danger">@error('email') {{ $message }} @enderror</span>
                             </div>
                         </div>
@@ -102,21 +93,15 @@
 
                         <div class="col-lg-6 p-t-20">
                             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width is-upgraded" data-upgraded=",MaterialTextField">
-                                <input class="mdl-textfield__input" type="text" id="pwd" name="password" >
-                                <label class="mdl-textfield__label">
-                                    Password
-                                </label>
+                                <input class="mdl-textfield__input" type="text" name="password" value="{{ old('password') }}" placeholder="Password">
                                 <span class="text-danger">@error('password') {{ $message }} @enderror</span>
                             </div>
                         </div>
 
                         <div class="col-lg-6 p-t-20">
                             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width is-upgraded" data-upgraded=",MaterialTextField">
-                                <input class="mdl-textfield__input" type="text" id="text5" name="phone" >
-                                <label class="mdl-textfield__label" for="text5">
-                                    Phone Number
-                                </label>
-                                <span class="text-danger">@error('phone number') {{ $message }} @enderror</span>
+                                <input class="mdl-textfield__input" type="text" id="text5" name="phonenumber" value="{{ old('phonenumber') }}" placeholder="Phone Number">
+                                <span class="text-danger">@error('phonenumber') {{ $message }} @enderror</span>
                             </div>
                         </div>
 
@@ -141,11 +126,8 @@
 
                         <div class="col-lg-6 p-t-20">
                             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width is-upgraded" data-upgraded=",MaterialTextField">
-                                <input class="mdl-textfield__input flatpickr-input" type="text" id="dateOfBirth" name="birth date" >
-                                <label class="mdl-textfield__label">
-                                    Birth Date
-                                </label>
-                                <span class="text-danger">@error('birth date') {{ $message }} @enderror</span>
+                                <input class="mdl-textfield__input flatpickr-input" type="text" id="dateOfBirth" name="birthdate" value="{{ old('birthdate') }}" placeholder="Birth Date">
+                                <span class="text-danger">@error('birthdate') {{ $message }} @enderror</span>
                             </div>
                         </div>
 

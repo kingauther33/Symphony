@@ -41,7 +41,6 @@ Route::get('/student_profile', [Front\StudentController::class, 'profile'])
     ->middleware('isLoggedStudent');
 Route::post('/student_profile', [Front\StudentController::class, 'postProfile']);
 Route::post('/contact', [Front\HomeController::class, 'sendmail'])->name('contact_mail');
-Route::get('/counselor', [Front\HomeController::class, 'counselor'])->name('counselor.home')->middleware('isLogged');
 
 
 Route::get('/exams',[Front\StudentController::class,'exams'])->middleware('isLoggedCounselor');
@@ -49,12 +48,6 @@ Route::get('/exams',[Front\StudentController::class,'exams'])->middleware('isLog
 Route::post('/exams',[Front\StudentController::class,'PostExams'])->middleware('isLoggedCounselor');
 
 Route::get('exams/delete/{rowId}', [Front\StudentController::class, 'deleteExams']);
-
-Route::get('/visitor', [Front\HomeController::class, 'visitor']);
-
-
-//    ->middleware('isLogged');
-
 
 
 //Route::post('/contact', [Front\HomeController::class, 'subscribe'])->name('contact_subscribe');
@@ -95,8 +88,8 @@ Route::get('/admin_counselor', [Front\AdminController::class, 'adminCounselor'])
     ->middleware('isLoggedAdmin');
 Route::get('/admin_addstudent', [Front\AdminController::class, 'addStudent']);
 Route::post('/admin_addstudent', [Front\AdminController::class, 'addStudent1'])->name('admin.addstudent');
-Route::get('/admin_addcourse', [Front\AdminController::class, 'addCourse']);
-Route::post('/admin_addcourse', [Front\AdminController::class, 'addCourse1'])->name('admin.addcourse');
+Route::get('/admin_addgrade', [Front\AdminController::class, 'addGrade']);
+Route::post('/admin_addgrade', [Front\AdminController::class, 'addGrade1'])->name('admin.addgrade');
 Route::get('/admin_addprofessor', [Front\AdminController::class, 'addProfessor']);
 Route::post('/admin_addprofessor', [Front\AdminController::class, 'addProfessor1'])->name('admin.addprofessor');
 Route::get('/admin_addcounselor', [Front\AdminController::class, 'addCounselor']);

@@ -60,7 +60,7 @@
 
                         <th scope="col">ID</th>
                         <th scope="col">Name</th>
-                        <th scope="col">Department</th>
+                        <th scope="col">Class</th>
                         <th scope="col">Mobile</th>
                         <th scope="col">Email</th>
                         <th scope="col">Address</th>
@@ -84,7 +84,7 @@
                             {{ $student->grade_id }}
                         </td>
                         <td>{{ $student->phone }}</td>
-                        <td>{{ $student->email }}</td>
+                        <td>{{ $UsersInDatabase->where('id', $student->user_id)->first()->email }}</td>
                         <td>{{ $student->address }}</td>
                         <td>
                             <span class="btn btn-sm btn-danger btn_row_delete"><i onclick="window.location='./admin_student/delete/{{ $student->id }}'" class="fa fa-trash"></i></span>

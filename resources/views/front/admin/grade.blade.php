@@ -33,11 +33,11 @@
     <div class="content pt-0">
 
         <div class="container">
-            <h2 class="mb-3 mt-4">Classes</h2>
+            <h2 class="mb-3 mt-4">Grades</h2>
             <div class="row">
                 <div class="col-md-6 col-sm-6 col-6">
                     <div class="btn-group">
-                        <a class="btn btn-info {{ (request()->segment(1) == 'addCourse') ? 'active' : '' }}" href="admin_addcourse" id="addRow">
+                        <a class="btn btn-info {{ (request()->segment(1) == 'admin_addgrade') ? 'active' : '' }}" href="admin_addgrade" id="addRow">
                             Add New
                             <i class="fa fa-plus"></i>
                         </a>

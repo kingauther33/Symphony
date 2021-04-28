@@ -31,8 +31,11 @@ class AdminController extends Controller
         // Session when logged in
         if (session()->has('LoggedUser')) {
             $user = Training_department::where('user_id', '=', session('LoggedUser'))->first();
+            $users = DB::table('users')->where('role_id', 3)->get();
+
             $data = [
-                'LoggedUserInfo' => $user
+                'LoggedUserInfo' => $user,
+                'UsersInDatabase' => $users
             ];
         }
 
@@ -46,8 +49,11 @@ class AdminController extends Controller
         // Session when logged in
         if (session()->has('LoggedUser')) {
             $user = Training_department::where('user_id', '=', session('LoggedUser'))->first();
+            $users = DB::table('users')->where('role_id', 4)->get();
+
             $data = [
-                'LoggedUserInfo' => $user
+                'LoggedUserInfo' => $user,
+                'UsersInDatabase' => $users
             ];
         }
 
@@ -61,10 +67,9 @@ class AdminController extends Controller
         // Session when logged in
         if (session()->has('LoggedUser')) {
             $user = Training_department::where('user_id', '=', session('LoggedUser'))->first();
-            $users = DB::table('users')->where('role_id', 1)->get();
 
             $data = [
-                'LoggedUserInfo' => $user
+                'LoggedUserInfo' => $user,
             ];
         }
 
@@ -117,7 +122,7 @@ class AdminController extends Controller
             ->with('message', '<div class="alert alert-success">Student Added Successfully!</div>');
     }
 
-    public function addCourse()
+    public function addGrade()
     {
         if (session()->has('LoggedUser')) {
             $user = Training_department::where('user_id', '=', session('LoggedUser'))->first();
@@ -126,10 +131,10 @@ class AdminController extends Controller
             ];
         }
 
-        return view('front.admin.add.addcourse', $data);
+        return view('front.admin.add.addgrade', $data);
     }
 
-    public function addCourse1(Request $request) {
+    public function addGrade1(Request $request) {
 
         $request->validate([
             'course name'=>'required',
@@ -235,25 +240,30 @@ class AdminController extends Controller
     public function addCounselor1(Request $request) {
 
         $request->validate([
-            'first name'=>'required',
-            'last name'=>'required',
-            'email'=>'required|email',
+            'firstname'=>'required',
+            'lastname'=>'required',
+            'email'=>'required|email|unique:users',
             'password'=>'required|min:6|max:14',
-            'birth date'=>'date_format:Y-m-d|before:today|nullable',
-            'phone number'=>'required|regex:/(0)[0-9]{9}/'
+            'birthdate'=>'required|date_format:Y-m-d|before:today|nullable',
+            'phonenumber'=>'required'
         ]);
 
-        $counselors = new Counselor();
-        $counselors->fname = $request->input('first name');
-        $counselors->lname = $request->input('last name');
-        $counselors->email = $request->email;
-        $counselors->password = $request->password;
-        $counselors->dob = $request->input('birth date');
-        $counselors->phone = $request->input('phone number');
+        // Add new user based on new councelor
+        $newCounselor = new Counselor();
+        $newCounselor->fname = $request->input('firstname');
+        $newCounselor->lname = $request->input('lastname');
+        $newUser = new User();
+        $newUser->email = $request->email;
+        $newUser->password = $request->password;
+        $newUser->role_id = 1;
+        $newUser->save();
+        $newCounselor->dob = $request->input('birthdate');
+        $newCounselor->phone = $request->input('phonenumber');
+        $newCounselor->user_id = $newUser->id;
 
-        $counselors->save();
+        $newCounselor->save();
 
-        return redirect('counselor')
+        return redirect()->route('counselor.home')
             ->with('message', '<div class="alert alert-success">Counselor Added Successfully!</div>');
     }
 
