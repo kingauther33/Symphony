@@ -10,6 +10,7 @@ use App\Models\Teacher;
 use App\Models\Visitor;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class AdminController extends Controller
 {
@@ -213,7 +214,31 @@ class AdminController extends Controller
 
 //phong
     public function delete($rowId){
-        Teacher::remove($rowId);
+
+
+        Teacher::where('id', $rowId)->delete();
+        Teacher::where('id', $rowId)
+            ->update(['isDeleted' => 1]);
+
+        return back();
+    }
+
+    public function delete1($rowId){
+
+
+        Counselor::where('id', $rowId)->delete();
+        Counselor::where('id', $rowId)
+            ->update(['isDeleted' => 1]);
+
+        return back();
+    }
+
+    public function delete2($rowId){
+
+
+        Student::where('id', $rowId)->delete();
+        Student::where('id', $rowId)
+            ->update(['isDeleted' => 1]);
 
         return back();
     }

@@ -30,6 +30,7 @@ Route::get('/instructor', [Front\HomeController::class, 'instructor']);
 Route::post('/contact', [Front\HomeController::class, 'subscribe']);
 Route::get('/login', [Front\UserAuthController::class, 'login'])->middleware('alreadyLoggedIn');
 Route::post('check', [Front\UserAuthController::class, 'check'])->name('admin.checklogin');
+Route::post('logout', [Front\UserAuthController::class, 'logout']);
 
 //Son
 
@@ -84,5 +85,16 @@ Route::get('/visitor', [Front\AdminController::class, 'visitor']);
 
 Route::post('/courses', [Front\CourseController::class, 'new_course']);
 Route::get('/courses', [Front\CourseController::class, 'course']);
+
+
+Route::get('/students', [Front\AdminController::class, 'sssss']);
+
+Route::get('admin_staff/delete/{rowId}',[Front\AdminController::class,'delete']);
+
+Route::get('admin_staff/delete/{rowId}',[Front\AdminController::class,'delete1']);
+
+Route::get('admin_staff/delete/{rowId}',[Front\AdminController::class,'delete2']);
+
 Route::get('delete{rowId}',[Front\AdminController::class,'delete']);
+
 
