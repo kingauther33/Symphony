@@ -16,7 +16,7 @@ class CreateVisitorsTable extends Migration
         Schema::create('visitors', function (Blueprint $table) {
             $table->id()->nullable();
 
-            $table->integer('exam_id')->unsigned();
+            $table->integer('exam_id')->unsigned()->nullable();
             $table->integer('course_id')->unsigned();
 
             $table->string('fname');
