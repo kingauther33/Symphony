@@ -98,8 +98,8 @@
                                                         <div class="course-cap-mid d-flex justify-content-between">
                                                             <div class="course-ratting">
                                                                 <ul>Name Subject:
-                                                                    <li><br><i class="fas fa-star"></i>An Di Ci Pee</li>
-                                                                    <li><i class="fas fa-star"></i>An In Lieu Eiu</li>
+                                                                    <li><br><i class="fas fa-star"></i>C</li>
+                                                                    <li><i class="fas fa-star"></i>Java</li>
                                                                     <br>
                                                                 </ul>
                                                                 <h5>Summary: You will have a grasp of all the coding
@@ -230,8 +230,8 @@
                                                         <div class="course-cap-mid d-flex justify-content-between">
                                                             <div class="course-ratting">
                                                                 <ul>Name Subject
-                                                                    <li><br><i class="fas fa-star"></i>Bi Mu En Ieu</li>
-                                                                    <li><i class="fas fa-star"></i>Khong Mua Ieu Jieu
+                                                                    <li><br><i class="fas fa-star"></i>C++</li>
+                                                                    <li><i class="fas fa-star"></i>Python
                                                                     </li>
                                                                     <br>
                                                                 </ul>
@@ -267,9 +267,9 @@
                                                         <div class="course-cap-mid d-flex justify-content-between">
                                                             <div class="course-ratting">
                                                                 <ul>Name Subject:
-                                                                    <li><br><i class="fas fa-star"></i>Keu Eun Uoi Jeu
+                                                                    <li><br><i class="fas fa-star"></i>C#
                                                                     </li>
-                                                                    <li><i class="fas fa-star"></i>Ka Fe Ji Man</li>
+                                                                    <li><i class="fas fa-star"></i>PHP</li>
                                                                     <br>
                                                                 </ul>
                                                                 <h5>Summary: You will be able to use frameworksand all
