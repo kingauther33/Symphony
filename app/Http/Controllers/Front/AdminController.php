@@ -278,6 +278,8 @@ class AdminController extends Controller
             ];
         }
 
+
+
         return view('front.counselor.visitor', compact('visitors'), $data);
     }
 

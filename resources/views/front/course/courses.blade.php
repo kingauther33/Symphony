@@ -133,23 +133,25 @@
                                                                             <div class="modal-body">
                                                                                 <div class="form-group">
                                                                                     <label for="exampleInputEmail1">
+                                                                                        Course name:
+                                                                                    </label>
+                                                                                    <div>
+                                                                                    <select name="course_id" required>
+                                                                                        <option value="1">1</option>
+                                                                                        <option value="2">2</option>
+                                                                                        <option value="3">3</option>
+                                                                                    </select>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <br><br>
+                                                                                <div class="form-group">
+                                                                                    <label for="exampleInputEmail1">
                                                                                         Email</label>
                                                                                     <input type="email"
                                                                                            class="form-control"
                                                                                            name="email"
                                                                                            aria-describedby="emailHelp"
                                                                                            placeholder="Enter Email" required="required">
-                                                                                </div>
-                                                                                <div class="form-group">
-                                                                                    <label for="exampleInput">
-                                                                                        Name Course</label>
-                                                                                    <input type="number"
-                                                                                           class="form-control"
-                                                                                           name="course_id"
-                                                                                           placeholder="Enter number course[1 or 2 or 3]"
-                                                                                           min="1"
-                                                                                           max="3"
-                                                                                           required>
                                                                                 </div>
                                                                                 <div class="form-group">
                                                                                     <label for="exampleInput">
@@ -180,7 +182,7 @@
                                                                                            data-validation-allowing="negative,number" input name="color"
                                                                                            data-validation="number" datavalidation-ignore="$"
                                                                                            placeholder="Enter Phone"
-                                                                                           maxlength="10"
+                                                                                           maxlength="11"
                                                                                            minlength="10"
                                                                                            pattern="\d*"
                                                                                            required = "required">

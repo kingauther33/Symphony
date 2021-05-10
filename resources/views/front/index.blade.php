@@ -116,7 +116,7 @@
                             </div>
                             <div class="course-caption">
                                 <div class="course-cap-top">
-                                    <h4><a href="#">Graphic Design</a></h4>
+                                    <h4><a href="courses">Graphic Design</a></h4>
                                 </div>
                                 <div class="course-cap-mid d-flex justify-content-between">
                                     <div class="course-ratting">
@@ -135,7 +135,6 @@
                                         <li><i class="ti-user"></i> 562</li>
                                         <li><i class="ti-heart"></i> 562</li>
                                     </ul>
-                                    <span>Free</span>
                                 </div>
                             </div>
                         </div>
@@ -148,7 +147,7 @@
                             </div>
                             <div class="course-caption">
                                 <div class="course-cap-top">
-                                    <h4><a href="#">Web Development</a></h4>
+                                    <h4><a href="courses">Web Development</a></h4>
                                 </div>
                                 <div class="course-cap-mid d-flex justify-content-between">
                                     <div class="course-ratting">
@@ -167,7 +166,6 @@
                                         <li><i class="ti-user"></i> 562</li>
                                         <li><i class="ti-heart"></i> 562</li>
                                     </ul>
-                                    <span>Free</span>
                                 </div>
                             </div>
                         </div>
@@ -180,7 +178,7 @@
                             </div>
                             <div class="course-caption">
                                 <div class="course-cap-top">
-                                    <h4><a href="#">Digital Marketing</a></h4>
+                                    <h4><a href="courses">Digital Marketing</a></h4>
                                 </div>
                                 <div class="course-cap-mid d-flex justify-content-between">
                                     <div class="course-ratting">
@@ -199,7 +197,6 @@
                                         <li><i class="ti-user"></i> 562</li>
                                         <li><i class="ti-heart"></i> 562</li>
                                     </ul>
-                                    <span>Free</span>
                                 </div>
                             </div>
                         </div>
@@ -209,7 +206,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="browse-btn2 text-center mt-50">
-                            <a href="courses.html" class="btn">Find More Courses</a>
+                            <a href="courses" class="btn">Find More Courses</a>
                         </div>
                     </div>
                 </div>
@@ -452,7 +449,7 @@
                                 <li><span class="flaticon-graduated"></span> Passionate Teachers</li>
                                 <li><span class="flaticon-tools-and-utensils"></span> Plenty of practices</li>
                             </ul>
-                            <a href="about.html" class="btn">More About Us</a>
+                            <a href="about" class="btn">More About Us</a>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-12">
